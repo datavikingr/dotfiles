@@ -19,10 +19,10 @@ alias back='cd "$OLDPWD"'
 # Informatic
 alias motd='cat /etc/motd | lolcat'
 alias neofetch='neofetch | lolcat'
-alias yggdrasil='cbonsai -S | lolcat'
+alias yggdrasil='cbonsai -S | lolcat -a'
 alias bonsai='cbonsai -S'
 alias news='curl us.getnews.tech'
-alias weather='curl https://wttr.in/Joppatowne?u'
+alias weather='curl https://wttr.in/Joppatowne'
 alias moon='curl wttr.in/Moon'
 
 # Developer Stuff
@@ -37,6 +37,7 @@ alias rebash='source .bashrc'
 alias rezsh='source .zshrc'
 alias histsearch='history | grep'
 alias trash='mv --force -t ~/.local/share/Trash'
+alias quickdict='compgen -c | fzf | xargs tldr'
 alias commanddict='compgen -c | fzf | xargs man'
 alias dirsize='du -hc . | tail -n 1'
 

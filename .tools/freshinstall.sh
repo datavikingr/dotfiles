@@ -18,7 +18,7 @@ sudo nala update
 sudo nala upgrade -y 
 sudo nala install git micro tmux python3 python3-pip python3-venv ranger bmon htop neofetch cbonsai docker.io docker-compose gnugo gnuchess fortune-mod unzip lolcat nethack-console -y
 sudo nala install fonts-firacode fonts-font-awesome fonts-junicode -y
-sudo nala install gparted stacer timeshift krita gimp calibre thunderbird kitty stow tldr -y
+sudo nala install fzf gparted stacer timeshift krita gimp calibre thunderbird kitty stow tldr -y
 
 # flatpak
 sudo nala install flatpak
