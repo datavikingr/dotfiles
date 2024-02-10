@@ -5,3 +5,4 @@
 .local/bin/pixelorama.d
 .local/bin/pixelorama
 .config/micro/backups/
+.config/gh/hosts.yml
