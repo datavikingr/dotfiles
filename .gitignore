@@ -6,3 +6,4 @@
 .local/bin/pixelorama
 .config/micro/backups/
 .config/gh/hosts.yml
+.debs/
