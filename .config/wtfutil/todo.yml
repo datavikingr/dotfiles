@@ -1,0 +1,139 @@
+items:
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Set Up Signal on Desktop
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: 'GH: (rttt, I think)'
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: 'GH: achannarasappa/ticker'
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: 'GH: php-terminal-gameboy-emulator'
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: 'GH: mps-youtube/mps-youtube'
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Landscape config for wtfutil
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: add more keyboard shortcuts to KDE (app launchers, app movers, resizers)
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: PiVPN to homelab
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Set up Family Tower for ssh
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Runic Keyboard Setup
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: work on Stitchbook
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Play with  GPT-Neo(X) NLP AI
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Publish view-only Digest as website, docker/nginx/gotty(or similar), new ddns, new port forwards
+  uncheckedicon: ' '
+- checked: false
+  checkedicon: X
+  date: null
+  tags: []
+  text: Work on Cyphr
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Mod Minecraft
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Explore Pacstall repos
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: rolling rhino??
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: deb-get 3rd party repo
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: mainline kernel-app
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Sync back up to NAS
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Install Minecraft
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Update to Pop 22.04
+  uncheckedicon: ' '
+- checked: true
+  checkedicon: X
+  date: null
+  tags: []
+  text: Install Stadia/Wavemaker/ et al PWAs
+  uncheckedicon: ' '

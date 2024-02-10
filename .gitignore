@@ -1,0 +1,7 @@
+.stow-local-ignore
+.oh-my-zsh/
+.themes/
+.local/bin/godot
+.local/bin/pixelorama.d
+.local/bin/pixelorama
+.config/micro/backups/

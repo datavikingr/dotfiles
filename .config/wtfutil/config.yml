@@ -1,0 +1,249 @@
+--- 
+wtf: 
+  colors: 
+    border: 
+      focusable: violet
+      focused: mediumspringgreen
+      normal: rebeccapurple
+    checked: gray
+    text: rebeccapurple
+    title: violet
+  grid: 
+    columns: 
+      - 40
+      - 35
+      - 54
+    rows: 
+      - 10
+      - 11
+      - 11
+      - 11
+      - 10
+      - 15
+      - 10
+      - 9
+      - 10
+      - 10
+  mods: 
+    clocks: 
+      colors: 
+        rows: 
+          even: mediumspringgreen
+          odd: violet
+      enabled: true
+      locations: 
+        - 
+          UTC: Etc/UTC
+        - 
+          Eastern: "America/New York"
+        - 
+          Central: America/Chicago
+        - 
+          Mountain: America/Denver
+        - 
+          Western: America/Los_Angeles
+        - 
+          London: Europe/London
+        - 
+          Seoul/Tokyo: Asia/Seoul
+      position: 
+        height: 1
+        left: 1
+        top: 8
+        width: 1
+      refreshInterval: 60s
+      sort: natural
+      title: "World Clocks"
+    covid: 
+      colors: 
+        label: green
+        text: white
+      countries: 
+        - US
+      enabled: true
+      position: 
+        height: 1
+        left: 1
+        top: 9
+        width: 1
+      refreshInterval: 1h
+    digitalclock: 
+      color: violet
+      enabled: true
+      font: bigfont
+      hourFormat: 12
+      position: 
+        height: 1
+        left: 1
+        top: 6
+        width: 1
+      refreshInterval: 1s
+      title: Time
+      type: digitalclock
+    git: 
+      commitCount: 5
+      commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      enabled: true
+      position: 
+        height: 1
+        left: 0
+        top: 5
+        width: 2
+      refreshInterval: 60s
+      repositories: 
+        - /home/dataviking/code/kpopdesktop
+        - /home/dataviking/code/cyphr
+        - /home/dataviking/code/gsw
+        - /home/dataviking/code/Stitchbook
+        - /home/dataviking/code/Oakenwort
+        - /home/dataviking/code/boardgame
+    hacker_feedreader: 
+      border: true
+      enabled: true
+      feedLimit: 20
+      feeds: 
+        - "https://news.ycombinator.com/rss"
+      focusChar: 2
+      focusable: true
+      position: 
+        height: 2
+        left: 0
+        top: 3
+        width: 2
+      refreshInterval: 15m
+      title: "Hacker News"
+      type: feedreader
+    ipinfo: 
+      colors: 
+        name: red
+        value: white
+      enabled: true
+      position: 
+        height: 1
+        left: 2
+        top: 4
+        width: 1
+      refreshInterval: 1h
+    neofetch_cmdrunner: 
+      cmd: neofetch
+      enabled: true
+      position: 
+        height: 4
+        left: 0
+        top: 6
+        width: 1
+      refreshInterval: 24h
+      type: cmdrunner
+    news_feedreader: 
+      border: true
+      enabled: true
+      feedLimit: 20
+      feeds: 
+        - "http://feeds.bbci.co.uk/news/video_and_audio/world/rss.xml"
+        - "https://rss.nytimes.com/services/xml/rss/nyt/US.xml"
+      focusChar: 2
+      focusable: true
+      position: 
+        height: 2
+        left: 0
+        top: 1
+        width: 2
+      refreshInterval: 15m
+      title: "World, National News"
+      type: feedreader
+    prettyweather: 
+      city: Baltimore
+      enabled: true
+      language: en
+      position: 
+        height: 1
+        left: 1
+        top: 7
+        width: 1
+      refreshInterval: 30m
+      title: Weather
+      unit: m
+      view: 0
+    resourceusage: 
+      cpuCombined: false
+      enabled: true
+      position: 
+        height: 1
+        left: 2
+        top: 3
+        width: 1
+      refreshInterval: 1s
+      showCPU: true
+      showMem: true
+      showSwp: true
+    security: 
+      enabled: true
+      position: 
+        height: 1
+        left: 2
+        top: 5
+        width: 1
+      refreshInterval: 1h
+    textfile: 
+      border: false
+      enabled: true
+      filePaths: 
+        - /home/dataviking/.config/wtf/title.txt
+      format: true
+      formatStyle: dracula
+      position: 
+        height: 1
+        left: 0
+        top: 0
+        width: 3
+      refreshInterval: 60m
+      wrapText: false
+    todo: 
+      checkedIcon: X
+      colors: 
+        checked: gray
+        highlight: 
+          back: orange
+          fore: black
+      enabled: true
+      filename: todo.yml
+      position: 
+        height: 4
+        left: 2
+        top: 6
+        width: 1
+      refreshInterval: 1h
+    yfinance: 
+      enabled: true
+      position: 
+        height: 2
+        left: 2
+        top: 1
+        width: 1
+      refreshInterval: 5m
+      sort: true
+      symbols: 
+        - GOOG
+        - MSFT
+        - AAPL
+        - TSLA
+        - AMZN
+        - SHOP
+        - JNJ
+        - VSDA
+        - HAL
+        - NFLX
+        - SCHW
+        - DIS
+        - INTC
+        - F
+        - TWTR
+        - XOM
+        - BTC-USD
+        - ETH-USD
+        - XMR-USD
+        - DOGE-USD
+      title: "Stocks and Crypto 🚀"
+  navigation: 
+    shortcuts: true
