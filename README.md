@@ -13,7 +13,7 @@ My little slice of `$HOME`.
 **Result:** Cloned the required repo.
 
 ## Step 3. 
- - `cd dotfiles/tools`
+ - `cd dotfiles/.tools`
 
  - `./debianhyprland.sh` 
 
@@ -34,6 +34,8 @@ My little slice of `$HOME`.
  - `./installdots.sh`
 
 **Result:** Deletes relevant files from $HOME, replaces them with `stow`-based symlinks, per the directory structure in the cloned repository.
+
+<span style="color:red">**UNTESTED**</span> - Please use extreme caution.
 
 ## Step 6.
 Additional software, downloaded from the web:
