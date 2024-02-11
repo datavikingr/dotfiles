@@ -23,8 +23,8 @@ Sourced in `.zshrc` in spite of the name. Some of the hits:
 4. VS Codium
 5. Godot
 6. Krita/Gimp
-7. <span style="color:grey">not assigned
-8. <span style="color:grey">not assigned
+7. Calibre
+8. Thunderbird
 9. <span style="color:grey">not assigned
 10. <span style="color:grey">not assigned
 
