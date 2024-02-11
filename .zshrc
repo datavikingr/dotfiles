@@ -9,8 +9,7 @@ export MICRO_TRUECOLOR=1
 
 ZSH_THEME="agnoster"
 
-plugins=( 
-    git
+plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
