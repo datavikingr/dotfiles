@@ -1,10 +1,6 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-
-// ### DEFAULT - Top ### //
 {
 "include": "~/.config/waybar/modules",
 "layer": "top",
-//"mode": "dock",
 "exclusive": true,
 "passthrough": false,
 "position": "top",
@@ -16,7 +12,7 @@
 "margin-right": 8,
 
 "modules-left": [
-	"hyprland/workspaces#pacman",
+	"hyprland/workspaces#4",
 	"custom/separator#dot-line",
 	"cpu",
 	"custom/separator#dot-line", 
@@ -26,7 +22,7 @@
 	"custom/separator#dot-line",
 	"custom/weather",
 	"custom/separator#blank_3",
-	"custom/cava_mviz",
+	"custom/cava_mviz"
 	],
 
 "modules-center": [
@@ -39,9 +35,8 @@
 	"custom/light_dark",
 	"custom/separator#dot-line",	
 	"custom/lock",
-	//],
 	"custom/separator#dot-line",
-	"custom/keybinds",	
+	"custom/keybinds"
 	], 
 
 "modules-right": [
@@ -61,6 +56,6 @@
 	"custom/separator#dot-line",
 	"custom/keyboard",
 	"custom/separator#dot-line",
-	"custom/power",
-	],
+	"custom/power"
+	]
 }
