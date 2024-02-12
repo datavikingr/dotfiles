@@ -9,6 +9,8 @@ iDIR="$HOME/.config/swaync/icons"
 # Define menu options as an associative array
 declare -A menu_options=(
   ["Lofi Girl"]="https://www.youtube.com/watch?v=jfKfPfyJRdk"
+  ["Chiptunes"]="https://www.youtube.com/watch?v=kYxMjsKT5Wk"
+  ["breakcore & dnb"]="https://www.youtube.com/watch?v=xu7pKyD0D-4"
   ["Lofi Boy"]="https://www.youtube.com/watch?v=4xDzrJKXOOY"
   ["Beneath The Mask"]="https://www.youtube.com/watch?v=Uq7kyf1T_lk"
   ["Dark Academia"]="https://www.youtube.com/watch?v=csxo1flT530"
@@ -18,6 +20,8 @@ declare -A menu_options=(
   ["i finally feel like myself again"]="https://www.youtube.com/watch?v=XGTIVDt7CfU"
   ["Chillhop Radio"]="https://www.youtube.com/watch?v=7NOSDKb0HlU"
   ["Coffee House Jazz"]="https://www.youtube.com/watch?v=f_WCg5WpFC8"
+  ["Celtic Tavern"]="https://www.youtube.com/watch?v=pFrdrhZEgiw"
+  ["Aggro Synth"]="https://www.youtube.com/watch?v=YXDM0RB_LeM"
 )
 
 # Function for displaying notifications
