@@ -24,9 +24,9 @@ Sourced in `.zshrc` in spite of the name. Some of the hits:
 5. Godot
 6. Krita/Gimp
 7. Calibre
-8. Thunderbird
-9. <span style="color:grey">not assigned
-10. <span style="color:grey">not assigned
+8. Signal/Discord
+9. Thunderbird
+10. Steam
 
 ## <span style="color:rebeccapurple">Applications
  - stow, fzf, tldr, tree, ranger, bmon, btop, htop, micro, tmux, docker, gsw
