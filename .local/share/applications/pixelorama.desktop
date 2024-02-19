@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Pixelorama
+Exec=/home/dataviking/.local/bin/pixelorama
+Icon=/home/dataviking/dotfiles/Pictures/icons/pixelorama.png
+StartupWMClass=Pixelorama

@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Godot
+Exec=/home/dataviking/.local/bin/godot
+Icon=/home/dataviking/dotfiles/Pictures/icons/godot.png
+StartupWMClass=Godot
