@@ -7,3 +7,4 @@
 .config/micro/backups/
 .config/gh/hosts.yml
 .debs/
+.config/dconf/user

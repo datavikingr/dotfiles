@@ -2,6 +2,8 @@
 
 My little slice of `$HOME`.
 
+**NOTE:** 'Installing' web apps works as normal/expected. They do require `windowrulesv2` tweaks, utilizing `title` to make them tile correctly after install. No sweat.
+
 ## <span style="color:rebeccapurple">.bash_aliases
 Sourced in `.zshrc` in spite of the name. Some of the hits: 
  - `home` - head to $HOME or the root of a repo, respectively
@@ -25,14 +27,14 @@ Sourced in `.zshrc` in spite of the name. Some of the hits:
 6. Krita/Gimp
 7. Calibre
 8. Signal/Discord
-9. Thunderbird
-10. Steam
+9. Thunderbird/Anytype
+10. Steam/Games
 
 ## <span style="color:rebeccapurple">Applications
  - stow, fzf, tldr, tree, ranger, bmon, btop, htop, micro, tmux, docker, gsw
  - gnugo, gnu-chess, nethack
  - stacer, gparted, timeshift, deb-get, pacstall, nala, flatpak
- - steam, heroic, signal, mullvad, brave, onlyoffice, bitwarden, calibre
+ - steam, heroic, signal, mullvad, brave, libreoffice writer, bitwarden, calibre, discord
 
 ## <span style="color:rebeccapurple">Installation
 
