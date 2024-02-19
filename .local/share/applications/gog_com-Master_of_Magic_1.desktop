@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Master of Magic
+GenericName=Master of Magic
+Comment=Master of Magic
+Icon=/home/dataviking/GOG Games/Master of Magic/support/icon.png
+Exec="/home/dataviking/GOG Games/Master of Magic/start.sh" ""
+Categories=Game;
+Path=/home/dataviking/GOG Games/Master of Magic
+
