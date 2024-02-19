@@ -41,6 +41,10 @@ alias quickdict='compgen -c | fzf | xargs tldr'
 alias commanddict='compgen -c | fzf | xargs man'
 alias dirsize='du -hc . | tail -n 1'
 
+#Flatpaks
+alias steam="flatpak run com.valvesoftware.Steam"
+alias discord="flatpak run com.discordapp.Discord"
+
 # Functions
 gitignore() {
 	local gitrootdir="$(git rev-parse --show-toplevel)"

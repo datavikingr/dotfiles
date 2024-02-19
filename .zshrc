@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/var/lib/flatpak/exports/share:$PATH
+export PATH=$HOME/.local/share/flatpak/exports/share:$PATH
 
 TZ='America/New_York'
 export TZ
