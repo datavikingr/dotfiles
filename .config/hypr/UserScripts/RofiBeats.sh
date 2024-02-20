@@ -18,7 +18,7 @@ declare -A menu_options=(
   ["Dark Synth"]="https://www.youtube.com/watch?v=MGJWPha7rJw"
   ["Minecraft - C418"]="https://www.youtube.com/watch?v=2xg71fa1CfI"
   ["i finally feel like myself again"]="https://www.youtube.com/watch?v=XGTIVDt7CfU"
-  ["Chillhop Radio"]="https://www.youtube.com/watch?v=7NOSDKb0HlU"
+  ["Chillhop Radio"]="https://www.youtube.com/watch?v=dP_xbuA4eis"
   ["Coffee House Jazz"]="https://www.youtube.com/watch?v=f_WCg5WpFC8"
   ["Celtic Tavern"]="https://www.youtube.com/watch?v=pFrdrhZEgiw"
   ["Aggro Synth"]="https://www.youtube.com/watch?v=YXDM0RB_LeM"
