@@ -77,6 +77,7 @@ cl() {
     # use your preferred ls command
 	ls
 }
+
 sounddev() {
 	echo "Sources (Inputs):"
 	pactl list sources short

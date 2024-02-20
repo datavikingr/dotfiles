@@ -20,6 +20,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_aliases
 
+# pacstall autocompletes
+autoload bashcompinit
+bashcompinit
+source /usr/share/bash-completion/completions/pacstall
+
 # Display Pokemon-colorscripts
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 pokemon-colorscripts --no-title -n trevenant

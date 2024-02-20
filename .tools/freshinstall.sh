@@ -2,11 +2,12 @@
 
 # deb-get
 curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
-deb-get install bitwarden brave-browser codium discord gh heroic onlyoffice-desktopeditors signal-desktop
+deb-get install bitwarden brave-browser codium gh heroic onlyoffice-desktopeditors signal-desktop
 
 # pacstall
 sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
-pacstall -I anytype-deb steam-deb
+pacstall -I anytype-deb
+pacstall -I mullvad-vpn-deb
 
 # homebrew
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -23,13 +24,14 @@ sudo nala install fzf gparted stacer timeshift krita gimp calibre thunderbird ki
 # flatpak
 sudo nala install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install com.valvesoftware.Steam
+flatpak install com.discordapp.Discord
 
 # godot
 cd /tmp
 wget https://github.com/godotengine/godot/releases/download/4.2.1-stable/Godot_v4.2.1-stable_linux.x86_64.zip
 unzip Godot_v4.2.1-stable_linux.x86_64.zip
-sudo cp Godot_v4.2.1-stable_linux.x86_64 /usr/bin/godot
-# TODO .desktop file
+sudo cp Godot_v4.2.1-stable_linux.x86_64 $HOME/.local/bin/godot
 cd $HOME
 
 # calibre
