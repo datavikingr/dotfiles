@@ -1,8 +1,10 @@
+#!/bin/bash
+
 # System with settings-tweaks
 alias cd='cl'
 alias sudo='sudo '
 alias please='sudo '
-alias apt='nala '
+#alias apt='nala '
 alias open='xdg-open '
 alias ls='ls -pa --color=auto --group-directories-first'
 alias tree='tree -L 2 --filelimit 25 --dirsfirst --noreport'
@@ -15,6 +17,10 @@ alias grep='grep --color=auto'
 alias ..='cd ..'
 alias home='cd ~'
 alias back='cd "$OLDPWD"'
+alias clear='clear; source $HOME/.zshrc'
+alias cat='bat --paging=never --theme=Dracula'
+alias bat='bat --paging=never --theme=Dracula'
+alias monfix='hyprctl dispatch movecurrentworkspacetomonitor DP-1'
 
 # Informatic
 alias motd='cat /etc/motd | lolcat'
@@ -24,6 +30,7 @@ alias bonsai='cbonsai -S'
 alias news='curl us.getnews.tech'
 alias weather='curl https://wttr.in/Joppatowne'
 alias moon='curl wttr.in/Moon'
+alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
 
 # Developer Stuff
 alias gitlog="git log --graph -n 5 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -41,9 +48,19 @@ alias quickdict='compgen -c | fzf | xargs tldr'
 alias commanddict='compgen -c | fzf | xargs man'
 alias dirsize='du -hc . | tail -n 1'
 
+# Music - 'mpv --shuffle --vid=no $link' for common options
+alias joker="mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' & cava"
+alias lofi="mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' & cava"
+alias C418="mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' & cava"
+alias piano="mpv 'https://www.youtube.com/watch?v=csxo1flT530' & cava"
+alias metal="mpv 'https://www.youtube.com/watch?v=9kGTJfwPSzI' & cava"
+alias chiptune="mpv 'https://www.youtube.com/watch?v=kYxMjsKT5Wk' & cava"
+alias dnb="mpv 'https://www.youtube.com/watch?v=GDtrDeaKpPc' & cava "
+alias ifeellikemyself="mpv 'https://www.youtube.com/watch?v=XGTIVDt7CfU' & cava"
+
 #Flatpaks
-alias steam="flatpak run com.valvesoftware.Steam"
-alias discord="flatpak run com.discordapp.Discord"
+#alias steam="flatpak run com.valvesoftware.Steam"
+#alias discord="flatpak run com.discordapp.Discord"
 
 # Functions
 gitignore() {
@@ -53,12 +70,10 @@ gitignore() {
 }
 
 update() {
-	sudo nala update &&
-	sudo nala upgrade -y &&
-	sudo deb-get upgrade -y &&
-	pacstall -Up &&
-	sudo nala autopurge &&
-	sudo nala clean
+	sudo dnf check &&
+	sudo dnf update &&
+	sudo dnf clean dbcache &&
+	flatpak update
 }
 
 countfiles() {
@@ -86,4 +101,12 @@ sounddev() {
 	pactl list sinks short
 	echo
 	echo "pactl set-default-{sink, source} #"
+}
+
+runefind() {
+	local lat_string="$1"
+	local runic_string="$2"
+	cd $HOME/code/Runa/texts
+	grep -nH $lat_string */ON-Lat.txt
+	grep -nH $runic_string */ON-YF.txt
 }
