@@ -1,0 +1,17 @@
+{
+    "colorscheme": "latte_dark",
+    "lsp": {
+        "python": {
+            "command": ["python3", "-m", "pylsp"],
+            "args": [],
+            "filetypes": ["python"]
+        },
+        "default_flags": {
+            "completion": true,
+            "hover": true,
+            "signatureHelp": true,
+            "goToDefinition": true,
+            "autoShowDiagnostics": true
+        }
+    }
+}

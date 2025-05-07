@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function mainloop() {
+	\tree -L 2 --dirsfirst --noreport
+}
+
+while : # It's always true, so it always loops!
+do
+	clear
+	mainloop
+	sleep 30
+done

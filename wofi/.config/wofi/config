@@ -1,0 +1,48 @@
+# Default to application launcher mode
+mode = drun
+
+# Set window dimensions
+width = 600
+height = 400
+
+# Enable dynamic resizing
+dynamic = true
+
+# Use fuzzy matching for easier lookup
+allow_markup = true
+case_sensitive = false
+no_actions = false
+hide_scroll = false
+allow_images = false
+insensitive = true
+term = kitty
+prompt = there's no place like 127.0.0.1  # Nerd Font search icon
+show = drun
+
+# Display icons for .desktop apps
+show_icons = true
+
+# Use history to remember previous runs
+allow_mark_up = true
+sort_order = alphabetical
+
+# History storage
+gtk_dark = true
+history = true
+histfile = ~/.local/share/wofi/history
+
+# Launching options
+run-always_parse_args = false
+run-cache = true
+run-exec_search = true
+run-hide_invalid = true
+run-show_all = true
+run-shell = /bin/bash
+
+# Keyboard navigation
+dmenu = true  # Enable dmenu-style interaction
+insensitive = true
+
+# Performance & appearance
+lines = 10
+columns = 1
