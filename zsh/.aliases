@@ -20,6 +20,7 @@ alias newterm='clear && source $HOME/.zshrc'
 alias cat='bat --paging=never'
 #alias bat='bat --paging=never --theme=Dracula'
 #alias monfix='hyprctl dispatch movecurrentworkspacetomonitor DP-1'
+alias editfile='micro $(fzf --preview='cat {}')
 
 # informatic
 alias motd='cat /etc/motd | lolcat'
