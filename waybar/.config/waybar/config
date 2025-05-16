@@ -8,15 +8,15 @@
         "on-click": "activate",
         "format-icons": {
             "1": "",
-            "2": "",
-            "3": "󰖟",
+            "2": "󰖟",
+            "3": "󰭹",
             "4": "",
             "5": "",
-            "6": "󰛓",
-            "7": "󰭹",
-            "8": "󰢷",
+            "6": "",
+            "7": "󰛓",
+            "8": "",
             "9": "",
-            "10": ""
+            "10": "󰢷"
         }
     },
     "sway/window": {
@@ -25,18 +25,15 @@
     "clock": {
     	"format": "{:%Y.%m.%d.%H.%M}  ",
     	"format-alt": "{:%A, %B %d, %Y (%R)}  ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
-        	"mode"          : "year",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
+        	"mode"          : "months",
+            "on-scroll"     : -1,
             	"format": {
-                    "months":     "<span color='#ffead3'><b>{}</b></span>",
-                    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                    "months":     "<span color='#8839ef'><b>{}</b></span>",
+                    "days":       "<span color='#df8e1d'><b>{}</b></span>",
+                    "weekdays":   "<span color='#04a5e5'><b>{}</b></span>",
+                    "today":      "<span color='#d20f39'><b><u>{}</u></b></span>"
                 }
         },
         "actions":  {
