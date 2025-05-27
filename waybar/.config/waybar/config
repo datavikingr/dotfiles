@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["clock","custom/clipboard","bluetooth","network","pulseaudio","battery"],
+    "modules-right": ["clock","custom/gitpull","custom/clipboard","bluetooth","network","pulseaudio","battery"],
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -42,6 +42,11 @@
             "on-scroll-down": "shift_down"
         }
 	},
+    "custom/gitpull": {
+        "exec": "~/.config/scripts/gitremoteindicator.sh arcanearena",
+        "interval": 300,
+        "return-type": "json"
+    },
     "custom/clipboard": {
         "format": "",
         "tooltip": false,

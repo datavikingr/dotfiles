@@ -1,8 +1,18 @@
-# system with settings-tweaks
+#!/bin/bash
+
+# System
+alias reboot='sudo systemctl reboot'
+alias poweroff='sudo systemctl poweroff'
+alias suspend='sudo systemctl suspend'
+# Human-readable disk usage
+alias df='df -h'
+# Search running processes
+alias psg='ps aux | grep -v grep | grep -i'
+# Show open ports
+alias ports='ss -tuln' 
+# change dir; auto-ls
 alias cd='cl'
-alias sudo='sudo '
 alias please='sudo '
-#alias apt='nala '
 alias open='xdg-open '
 alias ls='ls -pa --color=auto --group-directories-first'
 alias tree='tree -L 2 --dirsfirst --noreport'
@@ -18,10 +28,18 @@ alias home='cd ~'
 alias back='cd "$OLDPWD"'
 alias newterm='clear && source $HOME/.zshrc'
 alias cat='bat --paging=never'
-#alias bat='bat --paging=never --theme=Dracula'
+alias bat='bat --paging=never --theme=Dracula'
 #alias monfix='hyprctl dispatch movecurrentworkspacetomonitor DP-1'
+alias editfile='micro $(fzf --preview="cat {}")'
+alias histsearch='history | grep '
+alias trash='mv --force -t ~/.local/share/Trash'
+alias quickdict='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
+alias mansearch='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r man'
+alias dirsize='du -hc . | tail -n 1'
 
-# informatic
+
+
+# Informatic
 alias motd='cat /etc/motd | lolcat'
 alias neofetch='neofetch | lolcat'
 alias yggdrasil='cbonsai -S | lolcat -a'
@@ -31,32 +49,31 @@ alias weather='curl https://wttr.in/Joppatowne'
 alias moon='curl wttr.in/Moon'
 alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
 
-# developer stuff
+# Developer stuff
 alias gitlog="git log --graph -n 5 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 #alias python='python3 ' # not relevant
 alias init-project='git init && python3 -m venv .venv && source .venv/bin/activate'
 alias activate='.venv/bin/activate'
 alias gitroot='cd `git rev-parse --show-toplevel`'
+alias gs='git status -sb'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias gundo='git reset --soft HEAD~1'
 
-#Arch
-alias searchinstalled='yay -Qs '
-alias searchrepo='yay -Ss '
-alias install='yay -S '
-alias uninstall='yay -Rns '
-alias update='yay -Syu'
-alias cleanpkgs='yay -Yc; yay -Sc'
+# Flatpaks
+#alias steam="flatpak run com.valvesoftware.Steam"
+#alias discord="flatpak run com.discordapp.Discord"
 
 # misc
 alias newalias='source $HOME/.aliases'
 #alias rebash='source .bashrc' # not relevant
 alias rezsh='source .zshrc'
-alias histsearch='history | grep '
-alias trash='mv --force -t ~/.local/share/Trash'
-alias quickdict='compgen -c | fzf | xargs tldr'
-alias commanddict='compgen -c | fzf | xargs man'
-alias dirsize='du -hc . | tail -n 1'
 
-# music - 'mpv --shuffle --vid=no $link' for common options
+# Music - 'mpv --shuffle --vid=no $link' for common options
 alias joker="(mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' > /dev/null 2>&1 &) && cava"
 alias lofi="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
 alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
@@ -65,10 +82,6 @@ alias metal="(mpv 'https://www.youtube.com/watch?v=9kGTJfwPSzI' > /dev/null 2>&1
 alias chiptune="(mpv 'https://www.youtube.com/watch?v=kYxMjsKT5Wk' > /dev/null 2>&1 &) && cava"
 alias dnb="(mpv 'https://www.youtube.com/watch?v=GDtrDeaKpPc' > /dev/null 2>&1 &) && cava"
 alias ifeellikemyself="(mpv 'https://www.youtube.com/watch?v=XGTIVDt7CfU' > /dev/null 2>&1 &) && cava"
-
-#Flatpaks
-#alias steam="flatpak run com.valvesoftware.Steam"
-#alias discord="flatpak run com.discordapp.Discord"
 
 # Functions
 mkcd() { mkdir -p "$1" && cd "$1"; }
@@ -94,4 +107,89 @@ cl() {
     builtin cd "${DIR}" && \
     # use your preferred ls command
 	ls
+}
+
+searchpkg() {
+	if command -v dnf &> /dev/null; then
+		dnf list | fzf --preview='dnf info {1}'
+	elif command -v nala &> /dev/null; then
+		nala list | fzf --preview='nala info {1}'
+	elif command -v apt &> /dev/null; then
+		apt list 2>/dev/null | fzf --preview='apt show {1}'
+	elif command -v pacman &> /dev/null; then
+		pacman -Sl | fzf --preview='pacman -Si {2}'
+	elif command -v yay &> /dev/null; then
+		yay -Sl | fzf --preview='yay -Si {2}'
+	elif command -v flatpak &> /dev/null; then
+		flatpak remote-ls --system flathub --columns=ref | awk -F/ '{print $2}' | fzf --preview='flatpak search {1}' | xargs -r flatpak search
+	fi
+}
+
+install() {
+	if command -v dnf &> /dev/null; then
+		dnf list | fzf --preview='dnf info {1}' | xargs -r sudo dnf install
+	elif command -v nala &> /dev/null; then
+		nala list | fzf --preview='nala show {1}' | xargs -r sudo nala install
+	elif command -v apt &> /dev/null; then
+		apt list | fzf --preview='apt show {1}' | xargs -r sudo apt install
+	elif command -v pacman &> /dev/null; then
+		pacman -Sl | fzf --preview='pacman -Si {2}' | xargs -r sudo pacman -S
+	elif command -v yay &> /dev/null; then
+		yay -Sl | fzf --preview='yay -Si {2}' | xargs -r yay -S
+	elif command -v flatpak &> /dev/null; then
+		flatpak remote-ls --system flathub --columns=ref | awk -F/ '{print $2}' | fzf --preview='flatpak search {1}' | xargs -r flatpak install
+	fi
+}
+
+uninstall() {
+	if command -v dnf &> /dev/null; then
+		sudo dnf remove "$@"
+	fi
+	if command -v nala &> /dev/null; then
+		sudo nala remove
+	fi
+	if command -v apt &> /dev/null; then
+		sudo apt remove --purge "$@"
+	fi
+	if command -v pacman &> /dev/null; then
+		sudo pacman -Rns "$@"
+	fi
+	if command -v yay &> /dev/null; then
+		yay -Rns "$@"
+	fi
+	if command -v flatpak &> /dev/null; then
+		flatpak remove "$@"
+	fi
+}
+
+update() {
+	if command -v dnf &> /dev/null; then
+		sudo dnf update &&
+		sudo dnf clean dbcache &&
+		sudo dnf autoremove -y &&
+		sudo dnf clean packages 
+	elif command -v nala &> /dev/null; then
+		sudo nala update &&
+		sudo nala full-upgrade -y &&
+		sudo nala autoremove -y &&
+		sudo nala autoclean &&
+		sudo nala clean 
+	elif command -v apt &> /dev/null; then
+		sudo apt update &&
+		sudo apt full-upgrade -y &&
+		sudo apt autoremove -y &&
+		sudo apt autoclean &&
+		sudo apt clean 
+	elif command -v pacman &> /dev/null; then
+		sudo pacman -Syu &&
+		sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || true &&
+		sudo pacman -Sc --noconfirm 
+	elif command -v yay &> /dev/null; then
+		yay -Syu &&
+		yay -Rns $(pacman -Qdtq) 2>/dev/null || true && 
+		yay -Sc --noconfirm 
+	fi
+	if command -v flatpak &> /dev/null; then
+		flatpak update -y
+	fi
 }

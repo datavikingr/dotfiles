@@ -37,18 +37,69 @@ tooltip {
     color: #000000;
 }
 
+#window label {
+    color: #8839ef;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#clock {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#custom-gitpull {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#custom-gitpull.git-behind {
+    color: #d20f39;
+}
+
+/* When up to date */
+#custom-gitpull.git-clean {
+    color: #8839ef;
+}
+
+/* Error case */
+#custom-gitpull.git-error {
+    color: #df8e1d;
+}
+
+
 #custom-clipboard {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+#bluetooth {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
     margin: 0 5px;
 }
 
 #network {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
     margin: 0 2px;
 }
 
 #pulseaudio {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
     margin: 0 5px;
 }
 
 #battery {
+    color: #04a5e5;
+    font-weight: bold;
+    font-size: 16px;
     margin: 0 5px;
 }
