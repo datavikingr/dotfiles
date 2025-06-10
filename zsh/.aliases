@@ -37,8 +37,6 @@ alias quickdict='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | f
 alias mansearch='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r man'
 alias dirsize='du -hc . | tail -n 1'
 
-
-
 # Informatic
 alias motd='cat /etc/motd | lolcat'
 alias neofetch='neofetch | lolcat'
@@ -53,6 +51,7 @@ alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
 alias gitlog="git log --graph -n 5 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 #alias python='python3 ' # not relevant
 alias init-project='git init && python3 -m venv .venv && source .venv/bin/activate'
+alias gen_todo='grep -rnw ./scripts -e TODO --exclude=TODO.md > TODO.md'
 alias activate='.venv/bin/activate'
 alias gitroot='cd `git rev-parse --show-toplevel`'
 alias gs='git status -sb'
