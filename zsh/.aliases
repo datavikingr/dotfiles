@@ -74,6 +74,7 @@ alias rezsh='source .zshrc'
 
 # Music - 'mpv --shuffle --vid=no $link' for common options
 alias joker="(mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' > /dev/null 2>&1 &) && cava"
+alias bootleg="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk6daJUzOSqDIVQBTv6RYrm_' > /dev/null 2>&1 &) && cava"
 alias lofi="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
 alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
 alias piano="(mpv 'https://www.youtube.com/watch?v=csxo1flT530' > /dev/null 2>&1 &) && cava"
