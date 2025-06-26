@@ -73,6 +73,7 @@ alias newalias='source $HOME/.aliases'
 alias rezsh='source .zshrc'
 
 # Music - 'mpv --shuffle --vid=no $link' for common options
+alias mpv="mpv --ytdl-raw-options=cookies-from-browser=brave"
 alias joker="(mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' > /dev/null 2>&1 &) && cava"
 alias bootleg="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk6daJUzOSqDIVQBTv6RYrm_' > /dev/null 2>&1 &) && cava"
 alias lofi="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
