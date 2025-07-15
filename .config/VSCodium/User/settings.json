@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "editor.guides.bracketPairs": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono'",
+    "editor.fontSize": 16,
+    "colorize.decoration_type": "dot",
+    "colorize.colorized_colors": [
+        "BROWSERS_COLORS",
+        "HEXA",
+        "RGB",
+        "HSL",
+        "OKLAB",
+        "OKLCH"
+    ]
+}
