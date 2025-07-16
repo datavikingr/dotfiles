@@ -1,19 +1,49 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# unsure if working
+set -e
 
-dots_dir="$HOME/dotfiles" # Define the source directory
-home_dir="$HOME" # Define the home/destination directory
+REPO="https://github.com/datavikingr/dotfiles"
+DEST="$HOME/dotfiles"
 
-shopt -s dotglob
-for file in "$dots_dir"/*; do # Iterate over each file in $HOME/dotfiles/
-    relative_path=${file#$dots_dir/} # Get the relative path (to $HOME/dotfiles) of the file
-    if [ -d "$home_dir/$relative_path" ]; then
-            rm -rf "$home_dir/$relative_path"
-        else
-            rm -f "$home_dir/$relative_path"
-        fi
-done
+git clone "$REPO" "$DEST"
+cd "$DEST" || exit 1
 
-cd "$dots_dir" # heads to the dots directory
-stow . #creates symlinks for all the dots, in the parent ($HOME) directory
+echo "Attempting to stow dotfiles..."
+if stow --target="$HOME" .; then
+	echo "Dotfiles successfully stowed."
+	exit 0
+else
+	echo "Stow failed due to conflicts. Attempting to identify conflicts..."
+
+	# Dry-run to get the list of conflicting files
+	conflicts=$(stow -nv --target="$HOME" . | grep 'existing target is neither a link nor a directory' | awk '{print $NF}')
+
+	if [ -z "$conflicts" ]; then
+		echo "Stow failed, but no conflicts found via dry-run. Please investigate manually."
+		exit 1
+	fi
+
+	echo "The following files are blocking stow:"
+	echo "$conflicts"
+	echo
+
+	read -p "Do you want to delete these files and retry? [y/N] " confirm
+	if [[ "$confirm" =~ ^[Yy]$ ]]; then
+		echo "$conflicts" | while read -r file; do
+			echo "Deleting $file"
+			rm -rf "$file"
+		done
+
+		echo "Retrying stow..."
+		if stow --target="$HOME" .; then
+			echo "Dotfiles successfully stowed after cleanup."
+			exit 0
+		else
+			echo "Stow still failed. Aborting."
+			exit 1
+		fi
+	else
+		echo "Aborted by user. Dotfiles not modified."
+		exit 1
+	fi
+fi
