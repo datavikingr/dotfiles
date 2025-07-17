@@ -37,14 +37,7 @@ alias quickdict='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | f
 alias mansearch='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r man'
 alias dirsize='du -hc . | tail -n 1'
 
-# Informatic
-alias motd='cat /etc/motd | lolcat'
-alias neofetch='neofetch | lolcat'
-alias yggdrasil='cbonsai -S | lolcat -a'
-alias bonsai='cbonsai -S'
-alias news='curl us.getnews.tech'
-alias weather='curl https://wttr.in/Joppatowne'
-alias moon='curl wttr.in/Moon'
+source "$HOME/.secrets"
 alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
 
 # Developer stuff
