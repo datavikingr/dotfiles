@@ -127,12 +127,9 @@ searchpkg() {
 	fi
 }
 
-install() {
+installpkg() {
 	if command -v dnf &> /dev/null; then
-		selection=$(dnf list available | fzf --multi --preview='dnf info {1}')
-		[ -z "$selection" ] && return
-		pkgs=$(echo "$selection" | awk '{print $1}')
-		sudo dnf install $pkgs
+		sudo dnf install $(dnf list | fzf -m --preview="dnf info {1}")
 	elif command -v nala &> /dev/null; then
 		selection=$(nala list | fzf --multi --preview='nala show {1}')
 		[ -z "$selection" ] && return
@@ -143,16 +140,10 @@ install() {
 		[ -z "$selection" ] && return
 		pkgs=$(echo "$selection" | cut -d/ -f1)
 		sudo apt install $pkgs
-	elif command -v pacman &> /dev/null; then
-		selection=$(pacman -Sl | fzf --multi --preview='pacman -Si {2}')
-		[ -z "$selection" ] && return
-		pkgs=$(echo "$selection" | awk '{print $2}')
-		sudo pacman -S $pkgs
 	elif command -v yay &> /dev/null; then
-		selection=$(yay -Sl | fzf --multi --preview='yay -Si {2}')
-		[ -z "$selection" ] && return
-		pkgs=$(echo "$selection" | awk '{print $2}')
-		yay -S $pkgs
+		yay -S $(yay -Sl | fzf -m --preview="yay -Si {2}" | awk '{print $2}')
+	elif command -v pacman &> /dev/null; then
+		sudo pacman -S $(pacman -Sl | fzf -m --preview="pacman -Si {2}" | awk '{print $2}')
 	elif command -v flatpak &> /dev/null; then
 		selection=$(flatpak remote-ls --system flathub --columns=ref | awk -F/ '{print $2}' | fzf --multi --preview='flatpak search {1}')
 		[ -z "$selection" ] && return
