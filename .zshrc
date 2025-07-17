@@ -20,6 +20,9 @@ done
 export EDITOR=micro
 export VISUAL=micro
 
+# fzf 
+source <(fzf --zsh)
+
 # colors configs
 export COLORTERM=truecolor
 export MICRO_TRUECOLOR=1
