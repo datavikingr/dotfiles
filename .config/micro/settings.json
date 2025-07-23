@@ -1,17 +1,19 @@
 {
+    "autosave": 60,
+    "autosu": true,
+    "basename": true,
     "colorscheme": "latte_dark",
-    "lsp": {
-        "python": {
-            "command": ["python3", "-m", "pylsp"],
-            "args": [],
-            "filetypes": ["python"]
-        },
-        "default_flags": {
-            "completion": true,
-            "hover": true,
-            "signatureHelp": true,
-            "goToDefinition": true,
-            "autoShowDiagnostics": true
-        }
-    }
+    "diffgutter": true,
+    "hlsearch": true,
+    "matchbracestyle": "highlight",
+    "multiopen": "vsplit",
+    "relativeruler": true,
+    "reload": "auto",
+    "savecursor": true,
+    "savehistory": false,
+    "saveundo": true,
+    "scrollbar": true,
+    "statusformatl": "$(modified) $(filename)",
+    "statusformatr": "$(line)",
+    "truecolor": true
 }
