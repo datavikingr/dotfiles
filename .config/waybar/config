@@ -16,7 +16,7 @@
             "7": "7 ",
             "8": "8 󰛓",
             "9": "9 ",
-            "10": "10 󰢷"
+            "10": "10 󰊗"
         }
     },
     "sway/window": {
@@ -78,9 +78,21 @@
         "on-click": "pavucontrol"
     },
     "battery": {
+        "bat": "BAT0",
+        "interval": 1,
         "format": "{icon}",
-        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{icon}",
+        "format-full": "{icon}",
+        "format-icons": {
+            "default": ["", "", "", "", ""],
+            "charging": ["󱐋 ", "󱐋 ", "󱐋 ", "󱐋 ", ""],
+            "full": ""
+        },
         "tooltip": true,
-        "tooltip-format": "{capacity}% - {time} remaining."
+        "tooltip-format": {
+            "default": "{capacity}% - {timeTo}",
+            "full": "{capacity}%"
+        },
+        "on-click": "$HOME/.config/scripts/batterynotification.sh"
     }
 }

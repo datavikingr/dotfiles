@@ -70,6 +70,7 @@ alias rezsh='source .zshrc'
 alias mpv="mpv --ytdl-raw-options=cookies-from-browser=brave"
 alias joker="(mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' > /dev/null 2>&1 &) && cava"
 alias bootleg="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk6daJUzOSqDIVQBTv6RYrm_' > /dev/null 2>&1 &) && cava"
+alias dwarffort="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk5Ne0biOBIoXz95n1Mor1lG&si=vt4NVrsq27M8_VlU' > /dev/null 2>&1 &) && cava"
 alias lofi="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
 alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
 alias piano="(mpv 'https://www.youtube.com/watch?v=csxo1flT530' > /dev/null 2>&1 &) && cava"
