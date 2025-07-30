@@ -8,7 +8,7 @@ case "$1" in
         REPO_PATH="$CODE_DIR/arcanearena"
         ;;
     dotfiles)
-        REPO_PATH="$CODE_DIR/dotfiles"
+        REPO_PATH="$HOME/dotfiles"
         ;;
     gsw)
         REPO_PATH="$CODE_DIR/gsw"
