@@ -7,7 +7,7 @@ export COLOR_FG="#bcc0cc"
 export COLOR_CURSOR="#8c8fa1"
 
 #Base 8
-export COLOR_BLACK="#45475a"
+export COLOR_BLACK="#000000"
 export COLOR_RED="#d20f39"
 export COLOR_GREEN="#40a02b"
 export COLOR_YELLOW="#df8e1d"

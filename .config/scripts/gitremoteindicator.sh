@@ -28,14 +28,19 @@ case "$1" in
         ;;
 esac
 
+#git rev-list --left-right --count origin/main...HEAD | awk '{print $1 - $2}'
+
 # Proceed if it's a git repo
 if [ -d "$REPO_PATH/.git" ]; then
-    cd "$REPO_PATH" || exit
+    cd "$REPO_PATH" || exit 
     git fetch origin &>/dev/null
-    COMMITS_BEHIND=$(git rev-list --count HEAD..origin/$BRANCH 2>/dev/null)
+    COMMITS=$(git rev-list --left-right --count origin/main...HEAD | awk '{print $1 - $2}')
 
-    if [ "$COMMITS_BEHIND" -gt 0 ]; then
-        echo "{\"text\": \"⬇️ $COMMITS_BEHIND\", \"tooltip\": \"$1: $COMMITS_BEHIND commits behind\", \"class\": \"git-behind\"}"
+    if [ "$COMMITS" -gt 0 ]; then
+        echo "{\"text\": \" $COMMITS\", \"tooltip\": \"$1: $COMMITS commits behind\", \"class\": \"git-behind\"}"
+    elif [ "$COMMITS" -lt 0 ]; then
+        AHEAD=$(( -1 * COMMITS ))
+        echo "{\"text\": \" $AHEAD\", \"tooltip\": \"$1: $AHEAD commits ahead\", \"class\": \"git-ahead\"}"
     else
         echo "{\"text\": \"✔️\", \"tooltip\": \"$1: Up to date\", \"class\": \"git-clean\"}"
     fi

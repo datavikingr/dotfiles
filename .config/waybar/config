@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["clock","custom/gitpull","custom/clipboard","bluetooth","network","pulseaudio","battery"],
+    "modules-left": ["sway/window"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["custom/dots","custom/arcanearena","custom/clipboard","bluetooth","network","pulseaudio","battery","clock"],
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -23,8 +23,8 @@
         "max-length": 50
     },
     "clock": {
-    	"format": "{:%Y.%m.%d.%H.%M}  ",
-    	"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    	"format": " {:%I:%M}",
+    	"format-alt": "{:%A %Y.%m.%d.%H.%M}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
         	"mode"          : "months",
@@ -42,8 +42,13 @@
             "on-scroll-down": "shift_down"
         }
 	},
-    "custom/gitpull": {
+    "custom/arcanearena": {
         "exec": "~/.config/scripts/gitremoteindicator.sh arcanearena",
+        "interval": 300,
+        "return-type": "json"
+    },
+    "custom/dots": {
+        "exec": "~/.config/scripts/gitremoteindicator.sh dotfiles",
         "interval": 300,
         "return-type": "json"
     },

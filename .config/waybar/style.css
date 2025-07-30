@@ -49,25 +49,39 @@ tooltip {
     font-size: 16px;
 }
 
-#custom-gitpull {
+#custom-arcanearena {
     font-weight: bold;
     font-size: 16px;
 }
-
-#custom-gitpull.git-behind {
+#custom-arcanearena.git-behind {
+    color: #df8e1d;
+}
+#custom-arcanearena.git-clean {
+    color: #04a5e5;
+}
+#custom-arcanearena.git-ahead {
+    color: #40a02b;
+}
+#custom-arcanearena.git-error {
     color: #d20f39;
 }
 
-/* When up to date */
-#custom-gitpull.git-clean {
-    color: #8839ef;
+#custom-dots {
+    font-weight: bold;
+    font-size: 16px;
 }
-
-/* Error case */
-#custom-gitpull.git-error {
+#custom-dots.git-behind {
     color: #df8e1d;
 }
-
+#custom-dots.git-clean {
+    color: #04a5e5;
+}
+#custom-dots.git-ahead {
+    color: #40a02b;
+}
+#custom-dots.git-error {
+    color: #d20f39;
+}
 
 #custom-clipboard {
     color: #04a5e5;
