@@ -1,5 +1,6 @@
-micro/.config/micro/backups/
 .config/micro/buffers/*
 .config/micro/backups/ 
 .config/micro/buffers/history
 .secrets
+.newsboat/cache.db
+.newsboat/cache.db.lock 

@@ -1,21 +1,12 @@
 #!/bin/bash
 
-# System
-alias reboot='sudo systemctl reboot'
-alias poweroff='sudo systemctl poweroff'
-alias suspend='sudo systemctl suspend'
-# Human-readable disk usage
-alias df='df -h'
-# Search running processes
-alias psg='ps aux | grep -v grep | grep -i'
-# Show open ports
-alias ports='ss -tuln' 
-# change dir; auto-ls
-alias cd='cl'
+source "$HOME/.secrets"
+
+# Quality of Life
 alias please='sudo '
 alias open='xdg-open '
 alias ls='ls -pa --color=auto --group-directories-first'
-alias tree='tree -L 2 --dirsfirst --noreport'
+alias tree='tree -a -C -L 2 --dirsfirst --noreport'
 alias recent='ls -t -1'
 alias cp='cp -i'
 alias cpv='rsync -ah --info=progress2'
@@ -29,20 +20,36 @@ alias back='cd "$OLDPWD"'
 alias newterm='clear && source $HOME/.zshrc'
 alias cat='bat --paging=never'
 alias bat='bat --paging=never --theme=Dracula'
-#alias monfix='hyprctl dispatch movecurrentworkspacetomonitor DP-1'
+
+# Power User
 alias editfile='micro $(fzf --preview="cat {}")'
 alias histsearch='history | grep '
 alias trash='mv --force -t ~/.local/share/Trash'
-alias quickdict='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
-alias mansearch='command -v -- ${(k)commands} | xargs -n1 basename | sort -u | fzf --preview="tldr {}" | xargs -r man'
+alias quickdict='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
+alias mansearch='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r man'
+
+# System
+alias reboot='sudo systemctl reboot'
+alias poweroff='sudo systemctl poweroff'
+alias suspend='sudo systemctl suspend'
+alias df='df -h' # Human-readable disk usage
+alias psg='ps aux | grep -v grep | grep -i' # Search running processes
+alias ports='ss -tuln'  # Show open ports
+alias cd='cl' # change dir; auto-ls
 alias dirsize='du -hc . | tail -n 1'
 
-source "$HOME/.secrets"
+# Informatic
+alias whereami='curl -s ipinfo.io'
+alias motd='cat /etc/motd | lolcat'
+alias neofetch='fastfetch | lolcat'
+alias yggdrasil='cbonsai -S | lolcat -a'
+alias bonsai='cbonsai -S'
+alias news='newsboat'
+alias moon='curl wttr.in/Moon'
 alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
 
 # Developer stuff
 alias gitlog="git log --graph -n 5 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-#alias python='python3 ' # not relevant
 alias init-project='git init && python3 -m venv .venv && source .venv/bin/activate'
 alias gen_todo='grep -rnw ./scripts -e TODO --exclude=TODO.md > TODO.md'
 alias activate='.venv/bin/activate'
@@ -62,7 +69,6 @@ alias gundo='git reset --soft HEAD~1'
 
 # misc
 alias newalias='source $HOME/.aliases'
-#alias rebash='source .bashrc' # not relevant
 alias rezsh='source .zshrc'
 
 # Music - 'mpv --shuffle --vid=no $link' for common options
