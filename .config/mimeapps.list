@@ -1,0 +1,30 @@
+[Default Applications]
+application/x-zerosize=codium.desktop
+application/octet-stream=codium-wayland.desktop
+text/plain=codium-wayland.desktop
+text/markdown=focuswriter.desktop
+application/json=codium.desktop
+application/xml=codium.desktop
+application/x-shellscript=micro.desktop
+video/mp4=mpv.desktop
+video/webm=mpv.desktop
+audio/mpeg=mpv.desktop
+audio/ogg=mpv.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/webp=imv.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/epub+zip=foliate.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
+application/msword=libreoffice-writer.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+text/html=brave-browser.desktop
+x-scheme-handler/terminal=kitty.desktop
+
+[Added Associations]
+application/x-shellscript=codium-wayland.desktop;
+text/markdown=codium-wayland.desktop;
