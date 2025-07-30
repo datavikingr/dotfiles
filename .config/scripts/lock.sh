@@ -7,9 +7,13 @@ swaylock \
   --indicator-radius 200 \
   --indicator-thickness 16 \
   --ring-color 8839ef \
-  --ring-ver-color 1e66f5 \
-  --ring-wrong-color d20f39 \
-  --ring-clear-color 40a02b \
+  --inside-color 000000cc \
+  --ring-ver-color 1e66f5ff \
+  --inside-ver-color 1e66f544 \
+  --ring-wrong-color d20f39ff \
+  --inside-wrong-color d20f3944 \
+  --ring-clear-color 40a02bff \
+  --inside-clear-color 40a02b44 \
   --font FiraCodeNerdFont \
   --font-size 48 \
   --text-color 04a5e5 \
