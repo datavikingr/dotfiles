@@ -14,5 +14,6 @@
         "HSL",
         "OKLAB",
         "OKLCH"
-    ]
+    ],
+    "explorer.confirmDragAndDrop": false
 }

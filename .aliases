@@ -86,6 +86,36 @@ alias dnb="(mpv 'https://www.youtube.com/watch?v=GDtrDeaKpPc' > /dev/null 2>&1 &
 alias ifeellikemyself="(mpv 'https://www.youtube.com/watch?v=XGTIVDt7CfU' > /dev/null 2>&1 &) && cava"
 
 # Functions
+right_justify() {
+  local width pad plain
+  width=$(tput cols)
+  while IFS= read -r line; do
+    # Strip ANSI escape codes for accurate visible width
+    plain=$(sed 's/\x1b\[[0-9;]*m//g' <<< "$line")
+    pad=$((width - ${#plain}))
+    if (( pad > 0 )); then
+      printf "%*s%s\n" "$pad" "" "$line"
+    else
+      echo "$line"
+    fi
+  done
+}
+
+center_justify() {
+  local width pad plain
+  width=$(tput cols)
+  while IFS= read -r line; do
+    # Strip ANSI escape codes for visible width calculation
+    plain=$(sed 's/\x1b\[[0-9;]*m//g' <<< "$line")
+    pad=$(( (width - ${#plain}) / 2 ))
+    if (( pad > 0 )); then
+      printf "%*s%s\n" "$pad" "" "$line"
+    else
+      echo "$line"
+    fi
+  done
+}
+
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
 gitignore() {

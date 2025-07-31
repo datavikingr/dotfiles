@@ -1,6 +1,5 @@
-#pokemon-colorscripts -rn nidoking,trevenant,butterfree,arcanine,mew,poochyena,torterra,lycanroc,corviknight,boltund,abra,meowth,bulbasaur,slowking --no-title
-
-echo "Greetings, $(whoami). \n\nWelcome back to cloudrunner. \nNew login detected from: $(curl -s ipinfo.io)"
+#$HOME/dotfiles/.config/scripts/pokemonbattle.sh
+$HOME/.config/scripts/hackerlogin.sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
