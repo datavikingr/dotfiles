@@ -11,7 +11,7 @@ tmux send-keys -t "$SESSION":2 'curl https://wttr.in/Joppatowne' C-m
 tmux new-window -t "$SESSION":3 -n calendar 'calcurse'
 tmux new-window -t "$SESSION":4 -n system 'htop'
 # Create window 5: zen
-tmux new-window -t "$SESSION":5 -n zen 'gnugo'
+tmux new-window -t "$SESSION":5 -n zen '$HOME/dotfiles/.config/scripts/tsumego.sh'
 tmux split-window -h -t "$SESSION":5
 sleep .2
 tmux send-keys -t "$SESSION":5.2 'cbonsai -S' C-m
