@@ -13,4 +13,5 @@ include $HOME/.config/sway/config.d/*.conf
 exec_always waybar
 exec_always autotiling
 exec_always blueman
+exec_always .config/scripts/clamshellreload.sh
 exec wl-paste --watch cliphist store

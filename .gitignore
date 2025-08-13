@@ -3,4 +3,5 @@
 .config/micro/buffers/history
 .secrets
 .newsboat/cache.db
-.newsboat/cache.db.lock 
+.newsboat/cache.db.lock
+.config/scripts/test.sh
