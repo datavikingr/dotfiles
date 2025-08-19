@@ -1,0 +1,116 @@
+acpi 1.8-2
+autotiling 1.9.3-3
+base 3-2
+base-devel 1-2
+bat 0.25.0-4
+blueman 2.4.6-1
+brave-bin 1:1.80.124-1
+brightnessctl 0.5.1-3
+calcurse 4.8.1-2
+cava 0.10.4-3
+cbonsai 1.4.2-1
+cliphist 1:0.6.1-1
+dwarffortress 52.02-1
+efibootmgr 18-3
+fastfetch 2.48.1-1
+focuswriter 1.8.12-1
+fzf 0.65.0-1
+github-cli 2.76.1-1
+gnugo 3.8-8
+go 2:1.24.5-1
+godot 4.4.1-5
+grim 1.5.0-1
+gst-plugin-pipewire 1:1.4.7-1
+htop 3.4.1-1
+imv 4.5.0-5
+intel-ucode 20250512-1
+iwd 3.9-1
+kitty 0.42.2-1
+krita 5.2.11-1
+libpulse 17.0+r43+g3e2bb8a1e-1
+linux-firmware 20250708-1
+linux-hardened 6.14.11.hardened1-2
+linux-zen 6.15.8.zen1-2
+lolcat 100.0.1-5
+lxappearance-gtk3 0.6.4-1
+lynx 2.9.2-2
+mako 1.10.0-1
+man-db 2.13.1-1
+man-pages 6.15-1
+micro 2.0.14-1
+mpv 1:0.40.0-5
+nchess-git r32.7489711-4
+neovim 0.11.3-1
+nethack 3.6.7-6
+networkmanager 1.52.1-1
+newsboat 2.40-1
+noto-fonts 1:2025.07.01-1
+pacman-contrib 1.12.0-1
+pavucontrol 1:6.1-1
+pipewire 1:1.4.7-1
+pipewire-alsa 1:1.4.7-1
+pipewire-jack 1:1.4.7-1
+pipewire-pulse 1:1.4.7-1
+pokemon-colorscripts-git r114.5802ff67-1
+polkit-gnome 0.105-11
+poppler 25.07.0-1
+python-pillow 11.3.0-1
+python-pip 25.1.1-1
+python-pipx 1.7.1-2
+qt5-wayland 5.15.17+kde+r57-1
+qt6-wayland 6.9.1-1
+ranger 1.9.4-4
+reflector 2023-3
+signal-desktop 7.63.0-1
+slurp 1.5.0-1
+sof-firmware 2025.05-1
+sshs 4.7.2-1
+steam 1.0.0.82-2
+stow 2.4.1-1
+swaybg 1.2.1-1
+swayfx 0.5.3-4
+swayidle 1.8.0-2
+swayimg 4.5-1
+swaylock-effects 1.7.0.0-4
+tesseract 5.5.1-1
+thunar 4.20.4-1
+thunar-archive-plugin 0.6.0-1
+thunar-media-tags-plugin 0.6.0-1
+thunar-shares-plugin 1:0.5.0-1
+thunar-vcs-plugin 0.4.0-1
+thunar-volman 4.20.0-2
+tldr 3.4.1-1
+tmux 3.5_a-1
+tree 2.2.1-1
+ttf-firacode-nerd 3.4.0-1
+unzip 6.0-23
+vim 9.1.1552-1
+vscodium-bin 1.102.24914-1
+w3m 0.5.3.git20230713_1-1
+waybar 0.13.0-3
+wayland-utils 1.2.0-2
+wireplumber 0.5.10-1
+wl-clip-persist 0.4.3-2
+wl-clipboard 1:2.2.1-3
+wofi 1.5-1
+wtype 0.4-2
+xorg-xwayland 24.1.8-1
+yay 12.5.0-1
+yay-debug 12.5.0-1
+yt-dlp 2025.07.21-1
+yt-x-git v0.4.5.r33.gfb5f39a-1
+zip 3.0-11
+zram-generator 1.2.1-1
+zsh 5.9-5
+zsh-theme-powerlevel10k-git r4313.36f3045d-1
+venvs are in /home/datavikingr/.local/share/pipx/venvs
+apps are exposed on your $PATH at /home/datavikingr/dotfiles/.local/bin
+manual pages are exposed at /home/datavikingr/.local/share/man
+   package gdtoolkit 4.3.4, installed using Python 3.13.5
+    - gd2py
+    - gdformat
+    - gdlint
+    - gdparse
+    - gdradon
+   package lsnotes 1.0.0, installed using Python 3.13.5
+    - lsnotes
