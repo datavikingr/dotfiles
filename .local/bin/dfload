@@ -1,0 +1,4 @@
+#!usr/bin/env bash
+
+cd "/home/datavikingr/.local/share/Bay 12 Games/Dwarf Fortress/save"
+git pull origin main

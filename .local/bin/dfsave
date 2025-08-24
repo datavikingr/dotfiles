@@ -1,0 +1,6 @@
+#!usr/bin/env bash
+
+cd "/home/datavikingr/.local/share/Bay 12 Games/Dwarf Fortress/save"
+git add .
+git commit -m "saved the game"
+git push origin main
