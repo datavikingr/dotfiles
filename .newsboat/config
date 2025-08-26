@@ -1,1 +1,2 @@
 include ~/.newsboat/dark
+browser "links %u"

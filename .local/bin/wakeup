@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Set Session Name
+SESSION="wake up"
+WINDOW0="daily"
+SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+
+#curl 'http://wttr.in/Joppatowne+MD?0'
+#tmux send-keys -t "wake up":"wake up".1 'tsumego' C-m
+#tmux send-keys -t "wake up":"wake up".2 'cbonsai -S' C-m
+
+if [ "$SESSIONEXISTS" = "" ]
+then
+    tmux new-session -d -s "$SESSION" -n "wake up"
+	tmux split-window -h -t "$SESSION":1
+    tmux resize-pane -t "$SESSION":1 -x 60
+    tmux split-window -v -t "$SESSION":"wake up".1
+fi
+tmux attach -t "$SESSION"

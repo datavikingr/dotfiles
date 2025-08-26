@@ -21,6 +21,9 @@ done
 export EDITOR=micro
 export VISUAL=micro
 
+# set terminal browser
+export BROWSER=links
+
 # fzf 
 source <(fzf --zsh)
 
