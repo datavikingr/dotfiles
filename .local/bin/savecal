@@ -1,0 +1,6 @@
+#!usr/bin/env bash
+
+cd $HOME/Code/caldav
+git add .
+git commit -m "used savecal; updated calendar"
+git push origin main

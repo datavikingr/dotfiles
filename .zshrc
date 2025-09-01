@@ -8,6 +8,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# wayland
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
 # gtk
 export GTK_THEME=Catppuccin-Mocha-Mauve
 
@@ -20,9 +23,6 @@ done
 # set text editor
 export EDITOR=micro
 export VISUAL=micro
-
-# set terminal browser
-export BROWSER=links
 
 # fzf 
 source <(fzf --zsh)
@@ -49,9 +49,16 @@ bindkey -e
 zstyle :compinstall filename '/home/datavikingr/.zshrc'
 autoload -Uz compinit
 compinit
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+case "$(hostname)" in
+  cloudrunner)
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme;;
+  cloudchaser)
+    source $HOME/powerlevel10k/powerlevel10k.zsh-theme;;
+esac
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# aliases
 source "$HOME/.aliases"

@@ -20,6 +20,8 @@ alias back='cd "$OLDPWD"'
 alias newterm='clear && source $HOME/.zshrc'
 alias cat='bat --paging=never'
 alias bat='bat --paging=never --theme=Dracula'
+alias diff='diff -y --color=always'
+alias apt='nala'
 
 # Power User
 alias editfile='micro $(fzf --preview="cat {}")'
@@ -27,6 +29,7 @@ alias histsearch='history | grep '
 alias trash='mv --force -t ~/.local/share/Trash'
 alias quickdict='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
 alias mansearch='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r man'
+alias backup='rsync -aAXHv --delete --info=progress2 /home/ /path/to/backup/home/'
 
 # System
 alias reboot='sudo systemctl reboot'
@@ -214,7 +217,6 @@ update() {
 		sudo nala update &&
 		sudo nala full-upgrade -y &&
 		sudo nala autoremove -y &&
-		sudo nala autoclean &&
 		sudo nala clean 
 	elif command -v apt &> /dev/null; then
 		sudo apt update &&
