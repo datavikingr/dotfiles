@@ -213,6 +213,14 @@ update() {
 		sudo dnf clean dbcache &&
 		sudo dnf autoremove -y &&
 		sudo dnf clean packages 
+	elif command -v pacman &> /dev/null; then
+		sudo pacman -Syu &&
+		sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || true &&
+		sudo pacman -Sc --noconfirm 
+	elif command -v yay &> /dev/null; then
+		yay -Syu &&
+		yay -Rns $(pacman -Qdtq) 2>/dev/null || true && 
+		yay -Sc --noconfirm 
 	elif command -v nala &> /dev/null; then
 		sudo nala update &&
 		sudo nala full-upgrade -y &&
@@ -224,14 +232,6 @@ update() {
 		sudo apt autoremove -y &&
 		sudo apt autoclean &&
 		sudo apt clean 
-	elif command -v pacman &> /dev/null; then
-		sudo pacman -Syu &&
-		sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || true &&
-		sudo pacman -Sc --noconfirm 
-	elif command -v yay &> /dev/null; then
-		yay -Syu &&
-		yay -Rns $(pacman -Qdtq) 2>/dev/null || true && 
-		yay -Sc --noconfirm 
 	fi
 	if command -v flatpak &> /dev/null; then
 		flatpak update -y
