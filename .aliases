@@ -193,7 +193,7 @@ uninstall() {
 	if command -v nala &> /dev/null; then
 		sudo nala remove
 	fi
-	if command -v apt &> /dev/null; then
+	if command -v \apt &> /dev/null; then
 		sudo apt remove --purge "$@"
 	fi
 	if command -v pacman &> /dev/null; then
