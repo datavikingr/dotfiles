@@ -1,6 +1,24 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 
-cd $HOME/Code/caldav
+# Get the hostname (machine name)
+HOSTNAME=$(hostname)
+
+# Pick the correct path based on the hostname
+case "$HOSTNAME" in
+  cloudchaser)
+    CODE_DIR="$HOME/Code"
+    ;;
+  cloudrunner)
+    CODE_DIR="$HOME/code"
+    ;;
+  *)
+    echo "Unknown host: $HOSTNAME"
+    exit 1
+    ;;
+esac
+
+# Navigate and pull
+cd "$CODE_DIR/caldav" || { echo "Directory not found: $CODE_DIR/caldav"; exit 1; }
 git add .
 git commit -m "used savecal; updated calendar"
 git push origin main
