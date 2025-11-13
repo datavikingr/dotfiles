@@ -20,8 +20,8 @@ alias back='cd "$OLDPWD"'
 alias newterm='clear && source $HOME/.zshrc'
 alias cat='bat --paging=never'
 alias bat='bat --paging=never --theme=Dracula'
-alias diff='diff -y --color=always'
-alias apt='nala'
+alias diff='diff --side-by-side --color=always'
+alias apt='nala '
 
 # Power User
 alias editfile='micro $(fzf --preview="cat {}")'
@@ -30,6 +30,7 @@ alias trash='mv --force -t ~/.local/share/Trash'
 alias quickdict='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
 alias mansearch='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r man'
 alias backup='rsync -aAXHv --delete --info=progress2 /home/ /path/to/backup/home/'
+alias diskuse='du -h --max-depth=1 2> /dev/null | sort -n -r | head -n20'
 
 # System
 alias reboot='sudo systemctl reboot'
@@ -208,32 +209,57 @@ uninstall() {
 }
 
 update() {
-	if command -v dnf &> /dev/null; then
-		sudo dnf update &&
-		sudo dnf clean dbcache &&
-		sudo dnf autoremove -y &&
+	if type -p dnf &> /dev/null; then # start with Fedora
+		sudo dnf upgrade --refresh -y
 		sudo dnf clean packages 
-	elif command -v pacman &> /dev/null; then
-		sudo pacman -Syu &&
-		sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || true &&
-		sudo pacman -Sc --noconfirm 
-	elif command -v yay &> /dev/null; then
-		yay -Syu &&
-		yay -Rns $(pacman -Qdtq) 2>/dev/null || true && 
-		yay -Sc --noconfirm 
-	elif command -v nala &> /dev/null; then
-		sudo nala update &&
-		sudo nala full-upgrade -y &&
-		sudo nala autoremove -y &&
-		sudo nala clean 
-	elif command -v apt &> /dev/null; then
-		sudo apt update &&
-		sudo apt full-upgrade -y &&
-		sudo apt autoremove -y &&
-		sudo apt autoclean &&
-		sudo apt clean 
+		sudo dnf clean dbcache
+		sudo dnf autoremove -y
+	elif type -p yay &> /dev/null || type -p pacman &> /dev/null; then # Arch
+		if type -p yay &> /dev/null; then
+			yay -Syu --noconfirm
+			orphans=$(pacman -Qdtq 2>/dev/null)
+			if [[ -n "$orphans" ]]; then
+                yay -Rns $orphans --noconfirm
+            fi
+			yay -Sc --noconfirm
+		else
+			sudo pacman -Syu --noconfirm
+			orphans=$(pacman -Qdtq 2>/dev/null)
+			if [[ -n "$orphans" ]]; then
+				sudo pacman -Rns $orphans --noconfirm
+			fi
+			sudo pacman -Sc --noconfirm
+		fi
+	elif type -p nala &> /dev/null || type -p apt &> /dev/null; then # Debian
+		if type -p nala &> /dev/null; then
+			sudo nala update
+			sudo nala full-upgrade -y
+			sudo nala autoremove -y
+			sudo nala clean 
+		else
+			sudo apt update
+			sudo apt full-upgrade -y
+			sudo apt autoremove -y
+			sudo apt autoclean
+			sudo apt clean
+		fi
+	elif type -p zypper &> /dev/null; then # openSUSE
+		sudo zypper refresh
+		sudo zypper update -y
+		sudo zypper clean --all
+	elif type -p xbps-install &> /dev/null; then # Void Linux
+    	sudo xbps-install -Su
+		sudo xbps-remove -Oo
+	elif type -p apk &> /dev/null; then # Alpine
+		sudo apk update
+		sudo apk upgrade
 	fi
-	if command -v flatpak &> /dev/null; then
+	if type -p flatpak &> /dev/null; then 
 		flatpak update -y
+	fi
+	if type -p brew &> /dev/null; then
+		brew update
+		brew upgrade
+		brew cleanup
 	fi
 }

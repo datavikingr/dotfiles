@@ -6,11 +6,14 @@ HOSTNAME=$(hostname)
 # Pick the correct path based on the hostname
 case "$HOSTNAME" in
   cloudchaser)
-    CODE_DIR="$HOME/Code"
+    CODE_DIR="$HOME/Code/caldav"
     ;;
   cloudrunner)
-    CODE_DIR="$HOME/code"
+    CODE_DIR="$HOME/.local/share/calcurse"
     ;;
+  localhost) 
+    CODE_DIR="$HOME/Code/caldav"
+    ;; # this is the phone
   *)
     echo "Unknown host: $HOSTNAME"
     exit 1
