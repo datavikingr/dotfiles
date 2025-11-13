@@ -5,3 +5,6 @@
 .local/bin/gdlint
 .local/bin/gdparse
 .local/bin/gdradon
+.local/bin/gd2py
+.local/bin/lsnotes
+.local/share/pipx/venvs/lsnotes/bin/lsnotes
