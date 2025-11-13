@@ -1,3 +1,7 @@
 .lsnotes
 .git/
 .secrets
+.local/bin/gdformat
+.local/bin/gdlint
+.local/bin/gdparse
+.local/bin/gdradon
