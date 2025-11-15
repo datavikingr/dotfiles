@@ -21,7 +21,7 @@ case "$HOSTNAME" in
 esac
 
 # Navigate and pull
-cd "$CODE_DIR/caldav" || { echo "Directory not found: $CODE_DIR/caldav"; exit 1; }
+cd "$CODE_DIR" || { echo "Directory not found: $CODE_DIR/caldav"; exit 1; }
 git add .
 git commit -m "used savecal; updated calendar"
 git push origin main

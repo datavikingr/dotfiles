@@ -9,7 +9,7 @@ case "$HOSTNAME" in
     CODE_DIR="$HOME/Code/caldav"
     ;;
   cloudrunner)
-    CODE_DIR="$HOME/.local/share/calcurse"
+    CODE_DIR="$HOME/.config/calcurse"
     ;;
   localhost) 
     CODE_DIR="$HOME/Code/caldav"
@@ -21,5 +21,5 @@ case "$HOSTNAME" in
 esac
 
 # Navigate and pull
-cd "$CODE_DIR/caldav" || { echo "Directory not found: $CODE_DIR/caldav"; exit 1; }
+cd "$CODE_DIR" || { echo "Directory not found: $CODE_DIR"; exit 1; }
 git pull origin main
