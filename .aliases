@@ -66,6 +66,7 @@ alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
 alias gundo='git reset --soft HEAD~1'
+alias grev='git diff HEAD..origin/HEAD'
 
 # Flatpaks
 #alias steam="flatpak run com.valvesoftware.Steam"
@@ -146,39 +147,39 @@ cl() {
 }
 
 searchpkg() {
-	if command -v dnf &> /dev/null; then
+	if type -p dnf &> /dev/null; then
 		dnf list | fzf --preview='dnf info {1}'
-	elif command -v nala &> /dev/null; then
+	elif type -p nala &> /dev/null; then
 		nala list | fzf --preview='nala info {1}'
-	elif command -v apt &> /dev/null; then
+	elif type -p apt &> /dev/null; then
 		apt list 2>/dev/null | fzf --preview='apt show {1}'
-	elif command -v pacman &> /dev/null; then
+	elif type -p pacman &> /dev/null; then
 		pacman -Sl | fzf --preview='pacman -Si {2}'
-	elif command -v yay &> /dev/null; then
+	elif type -p yay &> /dev/null; then
 		yay -Sl | fzf --preview='yay -Si {2}'
-	elif command -v flatpak &> /dev/null; then
+	elif type -p flatpak &> /dev/null; then
 		flatpak remote-ls --system flathub --columns=ref | awk -F/ '{print $2}' | fzf --preview='flatpak search {1}' | xargs -r flatpak search
 	fi
 }
 
 installpkg() {
-	if command -v dnf &> /dev/null; then
+	if type -p dnf &> /dev/null; then
 		sudo dnf install $(dnf list | fzf -m --preview="dnf info {1}")
-	elif command -v nala &> /dev/null; then
+	elif type -p nala &> /dev/null; then
 		selection=$(nala list | fzf --multi --preview='nala show {1}')
 		[ -z "$selection" ] && return
 		pkgs=$(echo "$selection" | awk '{print $1}')
 		sudo nala install $pkgs
-	elif command -v apt &> /dev/null; then
+	elif type -p apt &> /dev/null; then
 		selection=$(apt list 2>/dev/null | fzf --multi --preview='apt show {1}')
 		[ -z "$selection" ] && return
 		pkgs=$(echo "$selection" | cut -d/ -f1)
 		sudo apt install $pkgs
-	elif command -v yay &> /dev/null; then
+	elif type -p yay &> /dev/null; then
 		yay -S $(yay -Sl | fzf -m --preview="yay -Si {2}" | awk '{print $2}')
-	elif command -v pacman &> /dev/null; then
+	elif type -p pacman &> /dev/null; then
 		sudo pacman -S $(pacman -Sl | fzf -m --preview="pacman -Si {2}" | awk '{print $2}')
-	elif command -v flatpak &> /dev/null; then
+	elif type -p flatpak &> /dev/null; then
 		selection=$(flatpak remote-ls --system flathub --columns=ref | awk -F/ '{print $2}' | fzf --multi --preview='flatpak search {1}')
 		[ -z "$selection" ] && return
 		flatpak install flathub $selection
@@ -188,22 +189,22 @@ installpkg() {
 }
 
 uninstall() {
-	if command -v dnf &> /dev/null; then
+	if type -p dnf &> /dev/null; then
 		sudo dnf remove "$@"
 	fi
-	if command -v nala &> /dev/null; then
+	if type -p nala &> /dev/null; then
 		sudo nala remove
 	fi
-	if command -v \apt &> /dev/null; then
+	if type -p \apt &> /dev/null; then
 		sudo apt remove --purge "$@"
 	fi
-	if command -v pacman &> /dev/null; then
+	if type -p pacman &> /dev/null; then
 		sudo pacman -Rns "$@"
 	fi
-	if command -v yay &> /dev/null; then
+	if type -p yay &> /dev/null; then
 		yay -Rns "$@"
 	fi
-	if command -v flatpak &> /dev/null; then
+	if type -p flatpak &> /dev/null; then
 		flatpak remove "$@"
 	fi
 }
