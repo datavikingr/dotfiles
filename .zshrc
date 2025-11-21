@@ -62,3 +62,5 @@ esac
 
 # aliases
 source "$HOME/.aliases"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
