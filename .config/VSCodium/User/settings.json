@@ -15,5 +15,8 @@
         "OKLAB",
         "OKLCH"
     ],
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "godotTools.scenePreview.previewRelatedScenes": "anyFolder",
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false
 }
