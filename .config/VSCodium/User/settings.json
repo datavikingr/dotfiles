@@ -1,6 +1,5 @@
 {
     "workbench.colorTheme": "Tokyo Night",
-    "workbench.iconTheme": "catppuccin-mocha",
     "editor.guides.bracketPairs": true,
     "editor.fontFamily": "'FiraCode Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": true,
@@ -16,7 +15,75 @@
         "OKLCH"
     ],
     "explorer.confirmDragAndDrop": false,
+<<<<<<< Updated upstream
     "godotTools.scenePreview.previewRelatedScenes": "anyFolder",
     "editor.insertSpaces": false,
     "editor.detectIndentation": false
+=======
+    "workbench.colorTheme": "Dracula At Night",
+    "godotTools.scenePreview.previewRelatedScenes": "anyFolder",
+    "godotTools.inlayHints.gdscript": true,
+    "todohighlight.defaultStyle": {},
+    "todohighlight.include": [
+        "**/*.gd",
+        "**/*.py",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "todohighlight.keywords": [
+
+        {
+            "text": "#TODO",
+            "color": "#fff",
+            "backgroundColor": "#ff79c6",
+            "overviewRulerColor": "#ff79c6"
+        },
+        {
+            "text": "#FIXME",
+            "color": "#fff",
+            "backgroundColor": "#bd93f9",
+            "overviewRulerColor": "#bd93f9"
+        },
+        {
+            "text": "#BUG",
+            "color": "#fff",
+            "backgroundColor": "#ff5555",
+            "overviewRulerColor": "#ff5555"
+        },
+        {
+            "text": "#HACK",
+            "color": "#fff",
+            "backgroundColor": "#ffb86c",
+            "overviewRulerColor": "#ffb86c"
+        },
+        {
+            "text": "#OPTIMIZETHIS",
+            "color": "#000",
+            "backgroundColor": "#f1fa8c",
+            "overviewRulerColor": "#f1fa8c"
+        },
+        {
+            "text": "#PASSED",
+            "color": "#000",
+            "backgroundColor": "#50fa7b",
+            "overviewRulerColor": "#50fa7b"
+        },
+        {
+            "text": "#NOTE",
+            "color": "#000",
+            "backgroundColor": "#8be9fd",
+            "overviewRulerColor": "#8be9fd"
+        }
+    ],
+    "files.exclude": {
+        "**/.gd.uid": true,
+        "**/.uid": true
+    }
+>>>>>>> Stashed changes
 }
