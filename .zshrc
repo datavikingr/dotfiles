@@ -34,16 +34,6 @@ if [ -f "$HOME/.config/scripts/global_colors.sh" ]; then
   source "$HOME/.config/scripts/global_colors.sh"
 fi
 
-#  history
-HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=10000
-bindkey "^R" history-incremental-search-backward
-setopt autocd extendedglob notify
-setopt append_history
-setopt inc_append_history
-setopt share_history
-
 #compinit
 bindkey -e
 zstyle :compinstall filename '/home/datavikingr/.zshrc'

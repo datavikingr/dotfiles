@@ -140,10 +140,8 @@ cl() {
 	# if no DIR given, go home
 	if [ $# -lt 1 ]; then 
 		DIR=$HOME;
-    fi;
-    builtin cd "${DIR}" && \
-    # use your preferred ls command
-	lsnotes view && ls
+  fi;
+  builtin cd "${DIR}" && ls
 }
 
 searchpkg() {
