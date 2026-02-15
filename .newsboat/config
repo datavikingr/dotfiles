@@ -1,2 +1,14 @@
+# load URLS on launch
+auto-reload  yes
+
+# dark mode
 include ~/.newsboat/dark
+
+# browser
 browser "links %u"
+
+# launch video player
+macro v set browser "setsid -f mpv" ; open-in-browser ; set browser "links %u"
+
+# download video
+macro d set browser "yt-dlp"; open-in-browser ; set browser "links %u"

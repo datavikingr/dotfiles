@@ -17,7 +17,7 @@ alias grep='grep --color=auto'
 alias ..='cd ..'
 alias home='cd ~'
 alias back='cd "$OLDPWD"'
-alias newterm='clear && source $HOME/.zshrc'
+alias newterm='source $HOME/.aliases; clear; source $HOME/.zshrc'
 alias cat='bat --paging=never'
 alias bat='bat --paging=never --theme=Dracula'
 alias diff='diff --side-by-side --color=always'
@@ -68,21 +68,23 @@ alias gd='git diff'
 alias gundo='git reset --soft HEAD~1'
 alias grev='git diff HEAD..origin/HEAD'
 
-# Flatpaks
-#alias steam="flatpak run com.valvesoftware.Steam"
-#alias discord="flatpak run com.discordapp.Discord"
-
-# misc
-alias newalias='source $HOME/.aliases'
-alias rezsh='source .zshrc'
-
-# Music - 'mpv --shuffle --vid=no $link' for common options
-#alias yt-dlp="yt-dlp --cookies-from-browser=brave" # stops the cookie error in yt-x --did not. Will submit a pull request to fixc that later.
+# General Music Aliases
+#info shuffle='mpv --shuffle --vid=no $link' for common options
+#info yt-dlp="yt-dlp --cookies-from-browser=brave" stops the cookie error
+alias ytdl='yt-dlp --cookies-from-browser brave -x --audio-format opus "-o "$HOME/Music/%(title)s.%(ext)s'
+alias ytdlpl='yt-dlp --cookies-from-browser brave -x --audio-format opus -o "$HOME/Music/%(playlist_title)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 alias mpv="mpv --ytdl-raw-options=cookies-from-browser=brave"
-alias joker="(mpv 'https://www.youtube.com/watch?v=Uq7kyf1T_lk' > /dev/null 2>&1 &) && cava"
-alias bootleg="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk6daJUzOSqDIVQBTv6RYrm_' > /dev/null 2>&1 &) && cava"
-alias dwarffort="(mpv --shuffle 'https://music.youtube.com/playlist?list=PLQN1NbOMpBk5Ne0biOBIoXz95n1Mor1lG&si=vt4NVrsq27M8_VlU' > /dev/null 2>&1 &) && cava"
-alias lofi="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
+
+# Local Music Playlists
+alias joker="mpv $HOME/Music/beneaththemask.opus"
+alias bootleg="mpv --shuffle $HOME/Music/bootleglofi/*"
+alias dwarffort="mpv --shuffle $HOME/Music/dwarfforts/*"
+alias heathen="mpv --shuffle $HOME/Music/heathen/*"
+alias postpunk="mpv --shuffle $HOME/Music/postpunk/*"
+alias videogamemetal="mpv --shuffle $HOME/Music/videogamemetal/*"
+
+# Online Music Playlists 
+alias lofigirl="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
 alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
 alias piano="(mpv 'https://www.youtube.com/watch?v=csxo1flT530' > /dev/null 2>&1 &) && cava"
 alias metal="(mpv 'https://www.youtube.com/watch?v=9kGTJfwPSzI' > /dev/null 2>&1 &) && cava"
