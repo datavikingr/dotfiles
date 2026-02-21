@@ -14,5 +14,5 @@
     "scrollbar": true,
     "statusformatl": "$(modified) $(filename)",
     "statusformatr": "$(line)",
-    "truecolor": true
+    "truecolor": "on"
 }

@@ -2,7 +2,7 @@
 # called from $HOME/.config/sway/config.d/eyecandy.conf
 
 # wallpapers directory
-WALLPAPER_DIR="$HOME/pictures/wallpapers"
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 
 # roll for random file
 RANDOM_WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n 1)

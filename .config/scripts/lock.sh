@@ -17,6 +17,6 @@ swaylock \
   --font FiraCodeNerdFont \
   --font-size 48 \
   --text-color 04a5e5 \
-  --image $HOME/pictures/wallpapers/greatwavesunset.jpeg \
+  --image $HOME/Pictures/wallpapers/greatwavesunset.jpeg \
   --effect-blur 16x4 \
   --effect-vignette .2:.8

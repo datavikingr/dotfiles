@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BRANCH="main"
-CODE_DIR="$HOME/code"
+CODE_DIR="$HOME/Code"
 
 case "$1" in
     arcanearena)

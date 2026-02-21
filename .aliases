@@ -51,6 +51,7 @@ alias bonsai='cbonsai -S'
 alias news='newsboat'
 alias moon='curl wttr.in/Moon'
 alias currentgame='gnugo -l $HOME/currentgame.sgf --mode ascii'
+alias clock='tty-clock -c -C 5'
 
 # Developer stuff
 alias gitlog="git log --graph -n 5 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
