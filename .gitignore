@@ -13,3 +13,4 @@
 .local/bin/pyinstaller
 .newsboat/cache.db
 .config/godot/editor_settings*
+.local/bin/soloterm
