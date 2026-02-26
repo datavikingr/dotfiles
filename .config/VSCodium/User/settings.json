@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "Dracula At Night",
     "editor.guides.bracketPairs": true,
     "editor.fontFamily": "'FiraCode Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
     "editor.fontLigatures": true,
@@ -15,13 +15,9 @@
         "OKLCH"
     ],
     "explorer.confirmDragAndDrop": false,
-<<<<<<< Updated upstream
     "godotTools.scenePreview.previewRelatedScenes": "anyFolder",
     "editor.insertSpaces": false,
-    "editor.detectIndentation": false
-=======
-    "workbench.colorTheme": "Dracula At Night",
-    "godotTools.scenePreview.previewRelatedScenes": "anyFolder",
+    "editor.detectIndentation": false,
     "godotTools.inlayHints.gdscript": true,
     "todohighlight.defaultStyle": {},
     "todohighlight.include": [
@@ -82,8 +78,9 @@
         }
     ],
     "files.exclude": {
-        "**/.gd.uid": true,
-        "**/.uid": true
+        "**/*.gd.uid": true,
+        "**/*.uid": true,
+		"**/*.import": true,
+		"**/*.*~": true
     }
->>>>>>> Stashed changes
 }

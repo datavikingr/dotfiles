@@ -20,6 +20,8 @@ for p in "$HOME/bin" "$HOME/go/bin" "$HOME/.cargo/bin" "$HOME/.dotnet/tools" "$H
   [ -d "$p" ] && export PATH="$p:$PATH"
 done
 
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
+
 # set text editor
 export EDITOR=nvim
 export VISUAL=nvim
