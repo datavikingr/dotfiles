@@ -32,15 +32,7 @@ vim.opt.tabstop = 2
 vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
------------------------------------------------------------
------ Background & Theme
---------------------------------------------------------------
 vim.o.guicursor = "a:ver100"
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
 -----------------------------------------------------------
 -- Terminal
@@ -153,7 +145,26 @@ vim.opt.rtp:prepend(lazypath)
 --------------------------------------------------------------
 require("lazy").setup({
 
-  -- File explorer
+  -- Catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000, -- make sure it loads first
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+      })
+      vim.cmd.colorscheme("catppuccin")
+      -- Force transparency (covers edge cases)
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+    end,
+  },  
+
+-- File explorer
   {
     "nvim-tree/nvim-tree.lua",
     config = function()
