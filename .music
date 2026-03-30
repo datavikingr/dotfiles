@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# General Music Aliases
+#info shuffle='mpv --shuffle --vid=no $link' for common options
+#info yt-dlp="yt-dlp --cookies-from-browser=brave" stops the cookie error
+alias ytdl='yt-dlp --cookies-from-browser brave -x --audio-format opus -o "$HOME/Music/%(title)s.%(ext)s"'
+alias ytdlpl='yt-dlp --cookies-from-browser brave -x --audio-format opus -o "$HOME/Music/%(playlist_title)s/%(playlist_index)02d - %(title)s.%(ext)s"'
+alias mpv="mpv --ytdl-raw-options=cookies-from-browser=brave"
+
+# Local Music Playlists
+alias joker="mpv $HOME/Music/beneaththemask.opus"
+alias bootleg="mpv --shuffle $HOME/Music/bootleglofi/*"
+alias dwarffort="mpv --shuffle $HOME/Music/dwarfforts/*"
+alias heathen="mpv --shuffle $HOME/Music/heathen/*"
+alias postpunk="mpv --shuffle $HOME/Music/postpunk/*"
+alias videogamemetal="mpv --shuffle $HOME/Music/videogamemetal/*"
+alias cyberpunk="mpv $HOME/Music/micromecha_virtualfrontiers.opus"
+
+# Online Music Playlists 
+alias lofigirl="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
+alias lofiboy="(mpv 'https://www.youtube.com/watch?v=4xDzrJKXOOY' > /dev/null 2>$1 &) && cava"
+alias steezy="(mpv 'https://www.youtube.com/watch?v=rPjez8z61rI' > /dev/null 2>&1 &) && cava"
+alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
+alias piano="(mpv 'https://www.youtube.com/watch?v=csxo1flT530' > /dev/null 2>&1 &) && cava"
+alias metal="(mpv 'https://www.youtube.com/watch?v=9kGTJfwPSzI' > /dev/null 2>&1 &) && cava"
+alias chiptune="(mpv 'https://www.youtube.com/watch?v=kYxMjsKT5Wk' > /dev/null 2>&1 &) && cava"
+alias dnb="(mpv 'https://www.youtube.com/watch?v=GDtrDeaKpPc' > /dev/null 2>&1 &) && cava"
+alias ifeellikemyself="(mpv 'https://www.youtube.com/watch?v=XGTIVDt7CfU' > /dev/null 2>&1 &) && cava"
+
+
