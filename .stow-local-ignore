@@ -14,3 +14,5 @@
 .local/bin/pyi-makespec
 .local/bin/pyi-set_version
 .local/bin/pyinstaller
+.local/share/pipx/*
+
