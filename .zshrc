@@ -15,7 +15,8 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export GTK_THEME=Catppuccin-Mocha-Mauve
 
 # config path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.config/scripts:$PATH"
+
 for p in "$HOME/bin" "$HOME/go/bin" "$HOME/.cargo/bin" "$HOME/.dotnet/tools" "$HOME/.npm-global/bin" "$HOME/.yarn/bin"; do
   [ -d "$p" ] && export PATH="$p:$PATH"
 done
