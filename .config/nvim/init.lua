@@ -12,6 +12,18 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 -----------------------------------------------------------
+-- Force Normal Mode inside the Tree
+-----------------------------------------------------------
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "NvimTree_*",
+  callback = function()
+    if vim.api.nvim_get_mode().mode ~= "n" then
+      vim.cmd("stopinsert")
+    end
+  end,
+})
+
+-----------------------------------------------------------
 -- Options
 -----------------------------------------------------------
 vim.opt.termguicolors = true
