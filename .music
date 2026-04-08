@@ -18,7 +18,7 @@ alias cyberpunk="mpv $HOME/Music/micromecha_virtualfrontiers.opus"
 
 # Online Music Playlists 
 alias lofigirl="(mpv 'https://www.youtube.com/watch?v=jfKfPfyJRdk' > /dev/null 2>&1 &) && cava"
-alias lofiboy="(mpv 'https://www.youtube.com/watch?v=4xDzrJKXOOY' > /dev/null 2>$1 &) && cava"
+alias lofiboy="(mpv 'https://www.youtube.com/watch?v=4xDzrJKXOOY' > /dev/null 2>&1 &) && cava"
 alias steezy="(mpv 'https://www.youtube.com/watch?v=rPjez8z61rI' > /dev/null 2>&1 &) && cava"
 alias C418="(mpv 'https://www.youtube.com/watch?v=2xg71fa1CfI' > /dev/null 2>&1 &) && cava"
 alias piano="(mpv 'https://www.youtube.com/watch?v=csxo1flT530' > /dev/null 2>&1 &) && cava"

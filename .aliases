@@ -1,8 +1,5 @@
 #!/bin/bash
 
-source "$HOME/.secrets"
-source "$HOME/.music"
-
 # Quality of Life
 alias please='sudo '
 alias open='xdg-open '
@@ -24,8 +21,11 @@ alias bat='bat --paging=never --theme=Dracula'
 alias diff='diff --side-by-side --color=always'
 alias apt='nala '
 
+# fzf madness
+alias editfile='nvim $(fzf --preview="cat {}")'
+
+
 # Power User
-alias editfile='micro $(fzf --preview="cat {}")'
 alias histsearch='history | grep '
 alias trash='mv --force -t ~/.local/share/Trash'
 alias quickdict='print -rl -- ${(k)commands} | sort -u | fzf --preview="tldr {}" | xargs -r tldr'
@@ -71,10 +71,6 @@ alias gundo='git reset --soft HEAD~1'
 alias grev='git diff HEAD..origin/HEAD'
 
 # Functions
-quiet() {
-  "$@" "> /dev/null 2>&1 &";
-}
-
 right_justify() {
   local width pad plain
   width=$(tput cols)

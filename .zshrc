@@ -56,3 +56,5 @@ esac
 
 # aliases
 source "$HOME/.aliases"
+source "$HOME/.secrets"
+source "$HOME/.music"

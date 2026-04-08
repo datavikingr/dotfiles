@@ -17,7 +17,7 @@ export COLOR_CYAN="#04a5e5"
 export COLOR_WHITE="#eff1f5"
 
 #Bright 8
-export COLOR_BRIGHT_BLACK="#000000"
+export COLOR_BRIGHT_BLACK="#111111"
 export COLOR_BRIGHT_RED="#d20f39"
 export COLOR_BRIGHT_GREEN="#40a02b"
 export COLOR_BRIGHT_YELLOW="#df8e1d"
