@@ -45,6 +45,7 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.o.guicursor = "a:ver100"
+vim.opt.fileformat = "unix"
 
 -----------------------------------------------------------
 -- Terminal
@@ -184,8 +185,23 @@ require("lazy").setup({
         view = { width = 30 },
         update_focused_file = { enable = true },
         sync_root_with_cwd = true,
+        filters = {
+          dotfiles = false,
+        },
+        git = {
+          ignore = false,
+        },
       })
     end,
+  },
+
+  -- Markdown Previewer
+  {
+	"henriklovhaug/Preview.nvim",
+	cmd = { "Preview" },
+	config = function()
+		require("preview").setup()
+	end,
   },
 
   -- Telescope
