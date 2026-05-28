@@ -88,6 +88,9 @@ vim.keymap.set({ "i", "n" }, "<Esc>", function()
   end
 end)
 
+-- Toggle text wrap
+vim.keymap.set(all_modes, "<C-w>", "<cmd>set wrap!<CR>")
+
 -- Toggle terminal mode
 vim.keymap.set({ "n", "i", "t" }, "<C-t>", toggle_terminal, { desc = "Toggle terminal" })
 
