@@ -24,6 +24,9 @@ alias apt='nala '
 # fzf madness
 alias editfile='nvim $(fzf --preview="cat {}")'
 
+# QR codes - syntax: `qc outputfile.png`
+alias qr="echo | fzf --print-query --preview 'printf "%s" "$FZF_QUERY" |qrencode -t ANSIUTF8' | tail -n1 | qrencode -t PNG -o "
+alias qr_read="zbarimg -q --raw "
 
 # Power User
 alias histsearch='history | grep '

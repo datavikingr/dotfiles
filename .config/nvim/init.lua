@@ -136,11 +136,38 @@ vim.keymap.set(all_modes, "<C-y>", "<C-r>")
 vim.keymap.set(all_modes, "<C-n>", "<cmd>enew<cr>")
 
 --Find / File picker
-vim.keymap.set(all_modes, "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
+vim.keymap.set(all_modes, "<C-f>", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set(all_modes, "<C-p>", "<cmd>Telescope find_files<cr>")
 
 -- Toggle sidebar
 vim.keymap.set(all_modes, "<C-b>", "<cmd>NvimTreeToggle<cr>")
+
+-- Follow link in md file
+vim.keymap.set("n", "gf", function()
+  local name = vim.fn.expand("<cfile>")
+  name = name:gsub("%[%[", ""):gsub("%]%]", "")
+
+  if not name:match("%.md$") then
+    name = name .. ".md"
+  end
+
+  -- search the whole project
+  local matches = vim.fn.glob("**/" .. name, false, true)
+
+  if #matches == 1 then
+    vim.cmd.edit(matches[1])
+  elseif #matches > 1 then
+    vim.ui.select(matches, {
+      prompt = "Multiple matches:",
+    }, function(choice)
+      if choice then
+        vim.cmd.edit(choice)
+      end
+    end)
+  else
+    vim.cmd.edit(name) -- create in cwd if not found
+  end
+end)
 
 -----------------------------------------------------------
 -- lazy.nvim bootstrap

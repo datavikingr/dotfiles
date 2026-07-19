@@ -58,3 +58,6 @@ esac
 source "$HOME/.aliases"
 source "$HOME/.secrets"
 source "$HOME/.music"
+
+# opencode
+export PATH=/home/datavikingr/.opencode/bin:$PATH
