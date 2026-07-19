@@ -26,6 +26,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -----------------------------------------------------------
 -- Options
 -----------------------------------------------------------
+vim.opt.foldmethod = "expr" 
+vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+vim.opt.foldlevel = 99
 vim.opt.termguicolors = true
 vim.opt.mouse = "a"
 vim.opt.mousemodel = "extend"
@@ -81,7 +84,10 @@ local normal_visual = { "n", "v" }
 
 -- Toggle insert/normal
 vim.keymap.set({ "i", "n" }, "<Esc>", function()
-  if vim.api.nvim_get_mode().mode == "i" then
+  local cmp = require("cmp")
+  if cmp.visible() then
+    cmp.abort()
+  elseif vim.api.nvim_get_mode().mode == "i" then
     vim.cmd("stopinsert")
   else
     vim.cmd("startinsert")
@@ -266,6 +272,10 @@ require("lazy").setup({
 -- LSP setup
 -----------------------------------------------------------
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
 local navic = require("nvim-navic")
 
 local servers = {
