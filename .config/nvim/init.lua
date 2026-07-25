@@ -49,6 +49,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.o.guicursor = "a:ver100"
 vim.opt.fileformat = "unix"
+vim.opt.showmode = false
 
 -----------------------------------------------------------
 -- Terminal
@@ -113,6 +114,18 @@ vim.keymap.set(all_modes, "<C-q>", "<cmd>qall!<cr>")
 -- Save
 vim.keymap.set(all_modes, "<C-s>", "<cmd>w<cr>")
 
+-- Save As 
+vim.keymap.set(all_modes, "<C-A-s>", function()
+  vim.ui.input({ prompt = "Save as: " }, function(filename)
+    if filename and filename ~= "" then
+      vim.cmd("saveas " .. filename)
+    end
+  end)
+end, { desc = "Save As" })
+
+-- Select All 
+vim.keymap.set({ "n", "i", "v" }, "<C-a>", "<Esc>ggVG", { desc = "Select all" })
+
 -- Copy
 vim.keymap.set(normal_visual,  "<C-c>", '"+y<esc>')
 vim.keymap.set("i", "<C-c>", function()
@@ -174,6 +187,18 @@ vim.keymap.set("n", "gf", function()
     vim.cmd.edit(name) -- create in cwd if not found
   end
 end)
+
+-- Move current line (Normal mode)
+vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { silent = true })
+vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { silent = true })
+
+-- Move selected lines (Visual mode)
+vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { silent = true })
+
+-- Move line while staying in Insert mode
+vim.keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", { silent = true })
+vim.keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", { silent = true })
 
 -----------------------------------------------------------
 -- lazy.nvim bootstrap
