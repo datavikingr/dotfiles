@@ -80,11 +80,11 @@ end
 -----------------------------------------------------------
 -- Keymaps
 -----------------------------------------------------------
-local all_modes = { "n", "i", "v", "r" }
+local all_modes = { "n", "i", "v" }
 local normal_visual = { "n", "v" }
 
 -- Toggle insert/normal
-vim.keymap.set({ "i", "n", "r" }, "<Esc>", function()
+vim.keymap.set({ "i", "n" }, "<Esc>", function()
   local cmp = require("cmp")
   if cmp.visible() then
     cmp.abort()
