@@ -21,7 +21,8 @@ for p in "$HOME/bin" "$HOME/go/bin" "$HOME/.cargo/bin" "$HOME/.dotnet/tools" "$H
   [ -d "$p" ] && export PATH="$p:$PATH"
 done
 
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
+# config XDG_DATA_DIRS
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
 
 # set text editor
 export EDITOR=nvim
@@ -43,13 +44,8 @@ zstyle :compinstall filename '/home/datavikingr/.zshrc'
 autoload -Uz compinit
 compinit
 
-case "$(hostname)" in
-  cloudrunner)
-    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme;;
-  cloudchaser)
-    source $HOME/powerlevel10k/powerlevel10k.zsh-theme
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";;
-esac
+source $HOME/powerlevel10k/powerlevel10k.zsh-theme
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";;
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

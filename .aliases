@@ -20,6 +20,9 @@ alias cat='bat --paging=never'
 alias bat='bat --paging=never --theme=Dracula'
 alias diff='diff --side-by-side --color=always'
 alias apt='nala '
+alias bat='batcat '
+alias python='python3 '
+alias thunar='GTK_THEME=Adwaita:dark thunar'
 
 # fzf madness
 alias editfile='nvim $(fzf --preview="cat {}")'

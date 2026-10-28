@@ -2,13 +2,13 @@
     "layer": "top",
     "modules-left": ["sway/window"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["custom/dots","custom/arcanearena","custom/clipboard","bluetooth","network","pulseaudio","battery","clock"],
+    "modules-right": ["custom/clipboard","bluetooth","network","pulseaudio","battery","clock"],
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
             "1": "1 ",
-            "2": "2 ",
+            "2": "2 ",
             "3": "3 󰖟",
             "4": "4 󰭹",
             "5": "5 ",
@@ -16,7 +16,7 @@
             "7": "7 ",
             "8": "8 󰛓",
             "9": "9 ",
-            "10": "10 󰊗"
+            "10": "10 󰢷"
         }
     },
     "sway/window": {
