@@ -1,0 +1,56 @@
+# Soloterm Configuration
+#
+# database_dir sets the directory where soloterm.db is stored.
+# Leave unset to use the default platform data directory.
+# The DB_PATH environment variable takes precedence over this setting if both are set.
+# Example: database_dir: /home/user/Dropbox/soloterm
+#
+# core_tags define the templates inserted by the built-in Lonelog keys (F2-F4).
+# Edit the template values to customise what is inserted. These entries are
+# self-healing: if a template is blank or the entry is missing the app will
+# restore the default on next startup.
+#
+# Tag Types define the Lonelog notation tags available in the app.
+# Each tag type has:
+#   label:    The human-readable name shown in the UI
+#   template: The Lonelog notation pattern inserted when selected
+#
+# Standard Lonelog tag types are provided below.
+# Add, remove, or modify entries to suit your game system.
+#
+# Tag Exclude Words are terms that, when found in the data section of a tag,
+# will exclude that tag from appearing in the recent tags list.
+# This is useful for filtering out completed or archived tags.
+# Words are matched case-insensitively.
+
+core_tags:
+    action:
+        template: "@ \nd: ->\n=> "
+    oracle:
+        template: "? \nd: ->\n=> "
+    dice:
+        template: "d: ->\n=> "
+tag_types:
+    - label: Clock
+      template: '[Clock: | ]'
+    - label: Event
+      template: '[E: | ]'
+    - label: Location
+      template: '[L: | ]'
+    - label: NPC
+      template: '[N: | ]'
+    - label: Player Character
+      template: '[PC: | ]'
+    - label: Scene
+      template: '[Scene: | ]'
+    - label: Table
+      template: 'tbl: -> '
+    - label: Thread
+      template: '[Thread: | ]'
+    - label: Timer
+      template: '[Timer: | ]'
+    - label: Track
+      template: '[Track: | ]'
+tag_exclude_words:
+    - closed
+    - abandoned

@@ -27,18 +27,18 @@ tmux send-keys -t "$SESSION:weather" "curl wttr.in" C-m
 
 # Window 5: Browser
 tmux new-window -t "$SESSION" -n "browser"
-tmux send-keys -t "$SESSION:browser" "chawan" C-m
+tmux send-keys -t "$SESSION:browser" "chawan https://duckduckgo.com" C-m
 
 # Window 6: Communications
 tmux new-window -t "$SESSION" -n "signal"
 tmux send-keys -t "$SESSION:signal" "gurk" C-m
 
 # Window 7: Recreation / shell
-tmux new-window -t "$SESSION" -n "zsh"
-tmux send-keys -t "$SESSION:zsh" "zsh" C-m
+tmux new-window -t "$SESSION" -n "term"
+tmux send-keys -t "$SESSION:term" "hackerlogin.sh" C-m
 
 # Return to the first window.
-tmux select-window -t "$SESSION:weather"
+tmux select-window -t "$SESSION:term"
 
 # Attach.
 exec tmux attach-session -t "$SESSION"
