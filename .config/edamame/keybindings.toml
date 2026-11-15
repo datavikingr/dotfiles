@@ -1,0 +1,155 @@
+# edamame keybindings
+#
+# This file is a starting point, not an exhaustive list: it shows the bindings
+# most people want to change. Every action edamame has can be bound here, and
+# the full default table is in the docs (docs/keybindings.md). Uncomment a line
+# and change the key to add a binding; any action you leave commented keeps its
+# compiled-in default.
+#
+# Syntax: <ActionName> = "<modifiers>+<key>"
+#
+#   modifiers: "ctrl", "alt", "shift", combined with `+`, in any order.
+#              (There is no "super" / "cmd" / "meta".)
+#
+#   key:       any single character  ..... "a", "-", "`", "é"
+#              arrows ................... "up", "down", "left", "right"
+#              "home", "end"
+#              page ..................... "page_up" / "pageup" / "pgup",
+#                                         "page_down" / "pagedown" / "pgdn"
+#              "enter" / "return"
+#              "backspace"
+#              "delete" / "del"
+#              "escape" / "esc"
+#              "tab", "backtab"
+#              "insert", "space"
+#              function keys ............ "f1" .. "f12"
+#
+# The whole string is case-insensitive, so "Ctrl+S" and "ctrl+s" are the same.
+# To bind the literal `+` key, write it last: "+" or "ctrl++".
+#
+# Three things to know:
+#
+#   * Bindings here are ADDED to the compiled-in defaults — they do not replace
+#     them. Binding `Redo = "ctrl+y"` gives Redo three chords, not one. The only
+#     way to displace a default is to bind that same chord to another action.
+#
+#   * Do NOT write `Action = ""` to leave something unbound. An empty string is
+#     a parse error: the entry is dropped and you get a warning at startup. An
+#     action with no default simply has no line in this file.
+#
+#   * Avoid "shift+<letter>". Terminals report that chord as an uppercase
+#     character, so `shift+a` will never match — write "A" instead. Use `shift`
+#     with non-letter keys (arrows, tab, enter, backspace).
+#
+# Examples:
+#   Quit = "ctrl+q"
+#   Save = "ctrl+s"
+
+# ── File ──────────────────────────────────────────────────────────────────────
+# SaveAs has no default key — run it from the command palette (Ctrl-P) or add a
+# line for it here.
+# Save                   = "ctrl+s"
+# Quit                   = "ctrl+q"
+
+# ── Clipboard ─────────────────────────────────────────────────────────────────
+# Cut                    = "ctrl+x"
+# Copy                   = "ctrl+c"
+# Paste                  = "ctrl+v"
+
+# ── History ───────────────────────────────────────────────────────────────────
+# Redo has two compiled-in chords: Ctrl-Shift-Z and Ctrl-R (vim's redo). Note
+# that overrides in this file are merged on top of the defaults — setting a key
+# here adds it, it does not unbind the compiled-in ones.
+# Undo                   = "ctrl+z"
+# Redo                   = "ctrl+shift+z"
+
+# ── Formatting ────────────────────────────────────────────────────────────────
+# Wrap the selected text in bold / italic markers (toggles back off if the
+# selection is already exactly bold / italic).
+#
+# Heads-up: Ctrl-i shares an encoding with Tab, and Ctrl-b with ASCII 0x02, on
+# terminals that lack the kitty keyboard protocol — there Ctrl-i inserts a Tab
+# and Ctrl-b does nothing. Rebind to e.g. "ctrl+shift+b" / "ctrl+shift+i" if
+# yours is affected, or run the actions from the command palette (Ctrl-P).
+# BoldSelection          = "ctrl+b"
+# ItalicizeSelection     = "ctrl+i"
+#
+# The remaining selection wraps — InlineCodeSelection (`), StrikethroughSelection
+# (~~), and HighlightSelection (==) — have no default key; run them from the
+# command palette (Ctrl-P), or add a line with a chord of your choice, e.g.
+#   InlineCodeSelection = "alt+k"
+
+# ── Insert ────────────────────────────────────────────────────────────────────
+# InsertTable opens the rows/columns prompt (the cursor must be on a blank
+# line). InsertLink and InsertImage drop a `[link text](file path or URL)` /
+# `![alt text](file path or URL)` snippet at the cursor, or wrap the selection
+# as the visible text; the placeholder is left selected so typing replaces it.
+# InsertLink and InsertImage have no default key — run them from the command
+# palette (Ctrl-P), or add a line for them here.
+# InsertTable            = "ctrl+shift+t"
+
+# ── View ──────────────────────────────────────────────────────────────────────
+# Ctrl-` needs the kitty keyboard protocol: the legacy control-byte encoding
+# every terminal falls back to has no representation for Ctrl with a
+# non-alphabetic key, so on Apple Terminal (and any other terminal without the
+# protocol) the chord never reaches edamame and the terminal beeps instead.
+# The same limit applies to InsertTable's Ctrl-Shift-T above and to the
+# Alt-Shift-Arrow table chords below. All of them remain available from the
+# command palette (Ctrl-P); alternatively, bind a plain Ctrl+letter here —
+# `ToggleRawMode = "ctrl+y"` works in every terminal. The startup capabilities
+# notice reports which tier your terminal landed in.
+# ToggleRawMode          = "ctrl+`"
+
+# ── List ──────────────────────────────────────────────────────────────────────
+# ToggleCheckbox         = "ctrl+space"
+
+# ── Links ─────────────────────────────────────────────────────────────────────
+# FollowLinkUnderCursor  = "ctrl+enter"
+#
+# NavigateBack and NavigateForward have no dedicated default key — they are
+# triggered by Alt+Left / Alt+Right whenever the cursor is outside a table
+# (inside a table, those keys reorder columns). Add a line for them here to
+# bind them unconditionally, e.g.
+#   NavigateBack = "alt+,"
+
+# ── Footnotes ─────────────────────────────────────────────────────────────────
+# Footnote actions have no default key — run them from the command palette
+# (Ctrl-P) or bind a chord here. InsertFootnote drops an auto-numbered `[^N]`
+# reference at the cursor; DeleteFootnote removes the footnote at the cursor
+# (every reference plus its definition) and renumbers; RenumberFootnotes
+# re-sequences all numeric footnotes into order of first reference. Add a line
+# for any of them here to bind a chord, e.g.
+#   InsertFootnote = "alt+f"
+
+# ── Lists ─────────────────────────────────────────────────────────────────────
+# FixListNumbering re-sequences the ordered list under the cursor so its source
+# numbering matches what is rendered (sequential from the first item's number,
+# spanning loose-list blank gaps). No default key — run it from the command
+# palette (Ctrl-P), or add a line for it here.
+
+# ── Table — cell navigation ──────────────────────────────────────────────────
+# TablePrevCell          = "shift+tab"
+#
+# TableNextCell and TableNextRow have no dedicated default key — Tab and Enter
+# do the same thing when the cursor is inside a table (and insert a tab or
+# newline otherwise). TablePrevRow is unbound by default. Add a line for any of
+# these here to bind them unconditionally.
+
+# ── Table — reorder rows/columns ─────────────────────────────────────────────
+# TableMoveRowUp         = "alt+up"
+# TableMoveRowDown       = "alt+down"
+# TableMoveColumnLeft    = "alt+left"
+# TableMoveColumnRight   = "alt+right"
+
+# ── Table — insert rows/columns ──────────────────────────────────────────────
+# TableInsertRowAbove    = "alt+shift+up"
+# TableInsertRowBelow    = "alt+shift+down"
+# TableInsertColumnLeft  = "alt+shift+left"
+# TableInsertColumnRight = "alt+shift+right"
+
+# ── Table — delete rows/columns ──────────────────────────────────────────────
+# TableDeleteRow         = "alt+backspace"
+# TableDeleteColumn      = "alt+shift+backspace"
+
+# ── Table — cell line break ──────────────────────────────────────────────────
+# TableInsertBreak       = "shift+enter"

@@ -1,0 +1,1 @@
+{"binaries":["edamame"],"binary_aliases":{},"cdylibs":[],"cstaticlibs":[],"install_layout":"cargo-home","install_prefix":"/home/datavikingr/.cargo","modify_path":true,"provider":{"source":"cargo-dist","version":"0.32.0"},"source":{"app_name":"edamame","name":"edamame","owner":"mijowi","release_type":"github"},"version":"0.1.6"}

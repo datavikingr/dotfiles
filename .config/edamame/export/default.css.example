@@ -1,0 +1,376 @@
+/*
+ * edamame bundled export stylesheet.
+ *
+ * A readable, GitHub-adjacent look that works without external assets.
+ * Override with:
+ *
+ *   [export.html]
+ *   stylesheet = "/path/to/your.css"
+ *
+ * in config.toml.
+ *
+ * The same file is what a [[export.custom]] converter (weasyprint,
+ * pandoc, …) is handed, so screen and print geometry are set separately:
+ * `@media screen` caps a centered column for a browser window, and
+ * `@page` / `@media print` give the sheet 1in margins and the full width
+ * between them.  Neither borrows the other's numbers.
+ */
+
+:root {
+    --fg: #24292f;
+    --fg-muted: #57606a;
+    --bg: #ffffff;
+    --bg-muted: #f6f8fa;
+    --border: #d0d7de;
+    --link: #0969da;
+    --code-bg: #f6f8fa;
+    --quote-border: #d0d7de;
+
+    /* Syntax highlighting: one color per token class the exporter emits
+       (`span.hl-*` inside fenced code blocks with a recognized language).
+       Print keeps these light-page colors, since the dark palette below is
+       screen only. */
+    --hl-keyword: #cf222e;
+    --hl-string: #0a3069;
+    --hl-comment: #6e7781;
+    --hl-number: #0550ae;
+    --hl-type: #953800;
+    --hl-function: #8250df;
+    --hl-attribute: #116329;
+
+    /* 16px is the browser default body size; `@media print` drops to the
+       11pt a printed page conventionally uses, stated in pt so a converter
+       that resolves px against something other than 96dpi still lands
+       there. */
+    --font-size: 16px;
+    --line-height: 1.5;
+
+    /* One vertical rhythm for every block.  Headings take `--space-block`
+       above and `--space-tight` below whatever their size, so the gap
+       above an h1 matches the gap above an h4 — em-based margins made a
+       heading's spacing scale with its own font size, which put a much
+       larger gap above the largest headings than anywhere else. */
+    --space-block: 1rem;
+    --space-tight: 0.5rem;
+    --space-section: 2rem;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --fg: #c9d1d9;
+        --fg-muted: #8b949e;
+        --bg: #0d1117;
+        --bg-muted: #161b22;
+        --border: #30363d;
+        --link: #58a6ff;
+        --code-bg: #161b22;
+        --quote-border: #3b434b;
+        --hl-keyword: #ff7b72;
+        --hl-string: #a5d6ff;
+        --hl-comment: #8b949e;
+        --hl-number: #79c0ff;
+        --hl-type: #ffa657;
+        --hl-function: #d2a8ff;
+        --hl-attribute: #7ee787;
+    }
+}
+
+html {
+    background: var(--bg);
+    color: var(--fg);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    /* A URL or an identifier longer than the column has nowhere to scroll
+       to on paper, so let it break rather than run off the page. */
+    overflow-wrap: break-word;
+}
+
+/* Screen only: print takes its margins from `@page` and its width from
+   the sheet, so it needs neither the cap nor the padding. */
+@media screen {
+    main.markdown-body {
+        /* `content-box`, so the 900px is the text column itself and the
+           gutters come on top — roughly GitHub's rendered-Markdown width,
+           wide enough for tables and code without a sideways scroll. */
+        box-sizing: content-box;
+        max-width: 900px;
+        margin: 0 auto;
+        /* Gutters scale with the window so a phone keeps its column. */
+        padding: 2rem clamp(1rem, 4vw, 2rem);
+    }
+}
+
+/* The document's own first and last blocks must not add to the
+   container's top and bottom space — a leading h1 otherwise sat a full
+   section-gap below the padding (on screen) or the page margin (in
+   print), while the side gutters stayed exact. */
+main.markdown-body > :first-child { margin-top: 0; }
+main.markdown-body > :last-child  { margin-bottom: 0; }
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin: var(--space-section) 0 var(--space-tight);
+}
+
+h1 { font-size: 2em; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h2 { font-size: 1.5em; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.875em; }
+h6 { font-size: 0.85em; color: var(--fg-muted); }
+
+/* ── Paragraphs & inline ─────────────────────────────────────────────────── */
+
+p, ul, ol, dl, blockquote, pre, table, figure {
+    margin: 0 0 var(--space-block);
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 600; }
+em     { font-style: italic; }
+del, s { color: var(--fg-muted); }
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: var(--space-section) 0;
+}
+
+/* ── Lists ───────────────────────────────────────────────────────────────── */
+
+ul, ol { padding-left: 2em; }
+li + li { margin-top: 0.25em; }
+li > p { margin-bottom: var(--space-tight); }
+
+/* Task lists keep the same indent as every other list — dropping them to a
+   narrower one left a checklist and the bullet list beside it starting in
+   different columns.  The checkbox hangs back into that indent. */
+ul.contains-task-list,
+ol.contains-task-list { list-style: none; }
+
+li.task-list-item > input[type="checkbox"] {
+    margin: 0 0.5em 0 -1.4em;
+    vertical-align: middle;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+
+blockquote {
+    padding: 0 1em;
+    color: var(--fg-muted);
+    border-left: 0.25em solid var(--quote-border);
+}
+
+blockquote > :first-child { margin-top: 0; }
+blockquote > :last-child  { margin-bottom: 0; }
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+
+code, pre, kbd, samp {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+    font-size: 0.9em;
+}
+
+code {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.15em 0.35em;
+}
+
+pre {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1em;
+    overflow: auto;
+    line-height: 1.45;
+}
+
+pre > code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1em;
+    white-space: pre;
+}
+
+/* Token colors only: the code surface's background and font come from the
+   rules above, so a highlighted block is the same box as a plain one. */
+.hl-keyword   { color: var(--hl-keyword); }
+.hl-string    { color: var(--hl-string); }
+.hl-comment   { color: var(--hl-comment); font-style: italic; }
+.hl-number    { color: var(--hl-number); }
+.hl-type      { color: var(--hl-type); }
+.hl-function  { color: var(--hl-function); }
+.hl-attribute { color: var(--hl-attribute); }
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+
+table {
+    border-collapse: collapse;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 0.4em 0.8em;
+}
+
+th {
+    background: var(--bg-muted);
+    font-weight: 600;
+    text-align: left;
+}
+
+tr:nth-child(2n) td {
+    background: var(--bg-muted);
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+
+img {
+    max-width: 100%;
+    height: auto;
+    background: var(--bg);
+    border-radius: 4px;
+}
+
+/* ── Footnotes ───────────────────────────────────────────────────────────── */
+
+.footnote-definition {
+    font-size: 0.9em;
+    color: var(--fg-muted);
+}
+
+.footnote-definition p { display: inline; margin: 0; }
+
+sup.footnote-reference a {
+    text-decoration: none;
+    padding: 0 0.2em;
+}
+
+/* Square brackets around the reference number — the [N] convention for
+   HTML footnotes (the bracket glyphs sit inside the <sup>, so they stay
+   superscript).  The TUI renders the same [N] convention, minus the
+   superscripting, which a terminal cell can't do. */
+sup.footnote-reference a::before { content: "["; }
+sup.footnote-reference a::after { content: "]"; }
+
+/* ── Figures: mermaid diagrams and display math ──────────────────────────── */
+
+/* Wrappers around figures the exporter renders to SVG and embeds as an
+   <img>: mermaid diagrams and `$$...$$` display math.  Formulas are drawn
+   in black on a transparent background, for a light page; the dark palette
+   puts them on a white card (below).  The fallback path —
+   when rendering fails or [export.html].figures is false — leaves each as a
+   <pre><code class="language-mermaid"> / language-math block styled by the
+   existing code-block rules, so no fallback styles are needed here. */
+figure.mermaid-diagram,
+figure.math-formula {
+    margin: var(--space-block) 0;
+    text-align: center;
+}
+
+figure.mermaid-diagram img,
+figure.math-formula img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* A dark page would hide the black strokes, so set each figure on a white
+   card.  Screen only, like the dark palette itself. */
+@media screen and (prefers-color-scheme: dark) {
+    figure.mermaid-diagram img,
+    figure.math-formula img {
+        box-sizing: border-box;
+        padding: var(--space-tight);
+        background: #ffffff;
+        border-radius: 4px;
+    }
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+
+/*
+ * Everything below is for the [[export.custom]] path — weasyprint, pandoc's
+ * HTML-to-PDF writers, wkhtmltopdf, or the browser's own Print dialog.
+ * Each converter supports a different vintage of the fragmentation
+ * properties, so the legacy `page-break-*` forms are stated alongside the
+ * modern `break-*` ones.
+ */
+
+@page {
+    /* No `size` on purpose: the sheet is the converter's (and the user's)
+       to choose, and pinning `letter` here would crop an A4 print.  The
+       1in margin is the part that is a convention rather than a locale. */
+    margin: 1in;
+}
+
+@media print {
+    :root {
+        /* Force the light palette.  A converter running under a dark
+           desktop can match `prefers-color-scheme: dark` and would
+           otherwise flood every sheet with ink. */
+        --fg: #000000;
+        --fg-muted: #444444;
+        --bg: #ffffff;
+        --bg-muted: #f2f2f2;
+        --border: #999999;
+        --code-bg: #f2f2f2;
+        --quote-border: #999999;
+        --font-size: 11pt;
+    }
+
+    /* Two lines is the typographic floor for a fragment left alone at a
+       page boundary. */
+    p, li, blockquote { orphans: 2; widows: 2; }
+
+    /* A heading stranded at the foot of a page is the most common ugly
+       break; the rest are blocks that read as a single object. */
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid;
+        page-break-after: avoid;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    pre, blockquote, figure, img, tr, .footnote-definition {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* `overflow: auto` is a screen affordance — on paper the overflow is
+       simply gone, so long code lines wrap instead of being cut off. */
+    pre {
+        overflow: visible;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    pre > code { white-space: inherit; }
+
+    /* Back to a real table so it can fragment across pages and repeat its
+       header on each; `display: block` (the screen scroll container) makes
+       both impossible. */
+    table { display: table; overflow: visible; }
+    thead { display: table-header-group; }
+
+    /* An image taller than the text column pushes itself onto a page of
+       its own and can still overflow it; `height: auto` above keeps the
+       aspect ratio while this bounds the height. */
+    img { max-height: 8in; }
+}

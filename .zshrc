@@ -57,3 +57,5 @@ source "$HOME/.music"
 
 # opencode
 export PATH=/home/datavikingr/.opencode/bin:$PATH
+
+. "$HOME/.cargo/env"

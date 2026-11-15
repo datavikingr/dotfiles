@@ -1,0 +1,161 @@
+# edamame configuration
+#
+# Full reference: docs/configuration.md (or press Ctrl-P → "Docs: Configuration" in edamame).
+#
+# Commented-out lines show the compiled-in default — uncomment and edit to override.
+# The handful of keys left uncommented below are the ones most people set: the theme,
+# the appearance mode, and the image / figure consent switches.  Settings changed from
+# inside edamame are written back here, preserving your comments, order, and spacing.
+
+# Active theme — a built-in name or the stem of a themes/<name>.toml file.  See docs/themes.md.
+theme = "Catppuccin"
+
+# Appearance mode for the theme picker: "dark" or "light".
+appearance = "dark"
+
+# ── Editor ────────────────────────────────────────────────────────────────────
+[editor]
+show_welcome = false
+daily_tips = false
+
+# Wrap long lines at the terminal width.
+# line_wrap = true
+
+# Wrap long lines inside code blocks (separate — wrapped code is often harder to read).
+# code_block_wrap = false
+
+# Render consecutive blank lines verbatim instead of collapsing them.
+# preserve_blank_lines = true
+
+# Reflow soft-wrapped prose into one paragraph, re-wrapped to the viewport,
+# inside list items, blockquotes and footnotes too.
+# reflow = true
+
+# Up/Down move by visual (wrapped) rows, keeping the screen column.
+# visual_line_nav = true
+
+# Show line numbers in a left gutter.
+# show_line_numbers = false
+
+# Lines advanced per mouse-wheel / trackpad tick.
+# mouse_scroll_lines = 1
+
+# Cap the content width and center it; the status / hint rows always span full width.
+# max_width_enabled = true
+
+# Content width cap in columns (floored at 20).
+# max_width_cols = 100
+
+# Render H1 headings as 4-row big text (ASCII titles only; falls back otherwise).
+# big_h1 = false
+
+# Syntax-highlight fenced code blocks by the language in the fence (never guessed).
+# syntax_highlighting = true
+
+# Blink the cursor.
+# cursor_blink = true
+
+# Cursor blink half-period in milliseconds (only when cursor_blink is true).
+# cursor_blink_ms = 530
+
+# How long a transient hint-line message lingers, in milliseconds.
+# transient_ms = 1500
+
+# Autosave after a spell of typing inactivity (never for an unnamed buffer).
+# autosave_enabled = false
+
+# Autosave idle window in milliseconds; must be between 1000 and 600000.
+# autosave_idle_ms = 5000
+
+# Review external changes in diff mode when the buffer is clean (else reload silently).
+# diff_on_change = true
+
+# Show the explainer modal when entering diff review.
+# show_diff_intro = true
+
+# Show the first-run welcome modal at startup.
+# show_welcome = true
+
+# Check GitHub for a newer release at startup, silent unless one exists.  See docs/security.md.
+# check_for_updates = true
+
+# Show an occasional startup tip about a less-obvious feature, at most once a day.
+# daily_tips = true
+
+# Reopen each file where its cursor was when the last session left it, centered in the viewport.
+# The remembered positions are machine bookkeeping, kept in state.toml beside this config's log.
+# remember_cursor = true
+
+# ── Modal ─────────────────────────────────────────────────────────────────────
+# [modal]
+
+# Editing handler: "default" (chord shortcuts) or "vim" (modal editing — see docs/vim-mode.md).
+# handler = "default"
+
+# ── Table ─────────────────────────────────────────────────────────────────────
+# [table]
+
+# Show row / column mouse handles on tables (auto-disabled without mouse support).
+# show_buttons = true
+
+# Stripe alternating data rows.
+# row_striping = true
+
+# Warn before a column resize writes a tui-columns HTML comment into the source.
+# warn_on_width_injection = true
+
+# ── Images ────────────────────────────────────────────────────────────────────
+[images]
+
+# Inline image rendering: "ask" | "always" | "never".
+enabled = "ask"
+
+# Policy for remote http(s) image URLs: "ask" | "always" | "never".
+remote_policy = "ask"
+
+# Size ceilings in terminal cells; images scale to fit while keeping aspect ratio.
+# max_width = 100
+# max_height = 24
+
+# Keep a partly visible image sharp while it scrolls, on kitty-family terminals (kitty,
+# Ghostty, WezTerm), by placing it directly instead of dropping to coarse half-blocks.
+# Turn off if images tear, flicker, or leave residue on your terminal. No effect under tmux.
+# sharp_scrolling = true
+
+# ── Figures ───────────────────────────────────────────────────────────────────
+[figures]
+
+# Inline rendering of mermaid diagrams and $$...$$ math: "ask" | "always" | "never".
+enabled = "ask"
+
+# Keep a math formula rendered and edit its source just below it, live (math blocks only).
+# math_preview = true
+
+# ── Export ────────────────────────────────────────────────────────────────────
+# Defaults the export modal (Ctrl-P → "Export…") opens with; your picks are written back.
+# [export.html]
+
+# Stylesheet: "builtin", or a .css file dropped in the export/ folder beside this file.
+# stylesheet = "builtin"
+
+# Base64-embed local images so the exported HTML is self-contained. Images from outside
+# the document's folder are listed and embedded only after you confirm.  Custom export
+# formats always embed, whatever this is set to.
+# inline_images = false
+
+# Render mermaid diagrams and $$...$$ math to embedded SVG images (false leaves them as source).
+# figures = true
+
+# Custom export targets each add a format to that modal.  edamame renders to HTML first,
+# then runs your command; {html} is the rendered file, {out} the output.  Repeat the block
+# per target.
+# [[export.custom]]
+# name      = "PDF (weasyprint)"
+# command   = ["weasyprint", "{html}", "{out}"]
+# extension = "pdf"
+
+# ── Dev ───────────────────────────────────────────────────────────────────────
+# [dev]
+
+# Write tracing logs to the XDG data dir (useful when reporting a bug).
+# logging = false
