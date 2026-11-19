@@ -81,7 +81,7 @@ jq -r --arg k "$KEY_COLOR" --arg v "$VAL_COLOR" --arg r "$RESET" \
     'to_entries[] | "\($k)" + .key + "\($r): \($v)" + (.value|tostring) + "\($r)"')
 
 # Print colorized message
-echo -e "${KEY_COLOR}Greetings, ${USR_COLOR}${USERNAME}${KEY_COLOR}. Welcome back to cloudrunner.${RESET}
+echo -e "${KEY_COLOR}Greetings, ${USR_COLOR}${USERNAME}${KEY_COLOR}. Welcome back to $(hostname).${RESET}
 
 ${USR_COLOR}New login detected from:${RESET} 
 ${IPINFO}
