@@ -19,15 +19,14 @@ tmux send-keys -t "$SESSION:calendar" "calcurse" C-m
 
 # Window 3: News
 tmux new-window -t "$SESSION" -n "news"
-tmux send-keys -t "$SESSION:news" "newsboat" C-m
+tmux send-keys -t "$SESSION:news" "newsboat -q" C-m
 
 # Window 4: Weather
 tmux new-window -t "$SESSION" -n "weather"
-tmux send-keys -t "$SESSION:weather" "curl wttr.in" C-m
+tmux send-keys -t "$SESSION:weather" "curl wttr.in/Joppatowne" C-m
 
 # Window 5: Browser
 tmux new-window -t "$SESSION" -n "browser"
-<<<<<<< Updated upstream
 tmux send-keys -t "$SESSION:browser" "chawan https://duckduckgo.com" C-m
 
 # Window 6: Communications
