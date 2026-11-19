@@ -1,22 +1,41 @@
-# World News
-https://feeds.bbci.co.uk/news/world/rss.xml
-https://www.reddit.com/r/worldnews.rss
-# Local News
-https://www.wbaltv.com/local-news-rss
-https://baltimorefishbowl.com/feed
-# Reddit
-https://www.reddit.com/r/solorpgplay.rss
-https://www.reddit.com/r/commandline.rss
-https://www.reddit.com/r/dwarffortress.rss
-https://www.reddit.com/r/YouShouldKnow.rss
-# Nerd News
-https://www.linux-magazine.com/index.php/rss/feed/news
-#https://hackaday.com/feed/
-https://www.popsci.com/feed/
-http://rss.sciam.com/ScientificAmerican-Global
-https://www.rockpapershotgun.com/feed
-https://wildhunt.org/feed
-# Youtube
+"---World News---"
+https://feeds.bbci.co.uk/news/world/rss.xml "~BBC" world news 
+https://www.aljazeera.com/xml/rss/all.xml "~Al Jazeera" middle east world news 
+https://www.euronews.com/rss "~Euro News" europe world news 
+"---Wire News---"
+https://news.google.com/rss/search?q=site:apnews.com&hl=en-US&gl=US&ceid=US:en-US "~AP News via Google"
+https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en "~Reuters via Google"
+https://feeds.npr.org/1001/rss.xml "~NPR" national public radio news
+"---Local News---"
+https://www.thebanner.com/arc/outboundfeeds/public-feed-rss/ "~The Baltimore Banner" baltimore news 
+https://www.wbaltv.com/local-news-rss "~WBAL" baltimore news 
+https://baltimorefishbowl.com/feed "~Baltimore Fishbowl" baltimore news 
+"---Leftist Views---"
+https://www.democracynow.org/democracynow.rss "~Democracy Now" leftist news 
+https://theintercept.com/feed/ "~The Interccept" civil liberties investigat journalism security surveilance
+https://jacobin.com/feed "~Jacobin" socialist left political theory
+"---Nerd News---"
+https://hackaday.com/feed/ "~Hackaday" linux hacking tech
+https://www.linux-magazine.com/index.php/rss/feed/news "~Linux Magazine" linux 
+https://lwn.net/headlines/rss "~Linux Weekly News" linux 
+https://micronews.debian.org/feeds/atom.xml "~Debian Micronews" linux debian 
+https://www.debian.org/security/dsa "~Debian Security Updates" linux debian security 
+https://www.theregister.com/headlines.atom "~The Register" tech
+https://www.popsci.com/feed/ "~Popular Science" science 
+http://rss.sciam.com/ScientificAmerican-Global "~Scientific American" science 
+"---Lifestyle---"
+https://www.epicgardening.com/feed/ "~Epic Gardening" garden 
+https://marylandgrows.umd.edu/feed "~Maryland Grows" garden
+https://www.kingarthurbaking.com/blog/feed "~King Arthur Baking Blog" baking 
+https://www.eurogamer.net/feed "~Eurogamer" video game 
+https://www.rockpapershotgun.com/feed "~Rock Paper Shotgun" video game 
+https://www.gamingonlinux.com/article_rss.php "~GamingOnLinux" linux video game
+https://www.bay12games.com/dwarves/dev_now.rss "~Dwarf Fortress Dev Log" video game dwarf fort 
+https://press.capcom.com/news/rss "~Capcom Press Releases" video game 
+https://gnomestew.com/feed/ "~Gnome Stew" ttrpg 
+https://www.tabletopgamingnews.com/feed/ "~TableTop Gaming News" ttrpg
+https://wildhunt.org/feed "~The Wild Hunt" pagan
+"---YouTube---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UClFSU9_bUb4Rc6OYfTt5SPw
 https://www.youtube.com/feeds/videos.xml?channel_id=UCJHAT3Uvv-g3I8H3GhHWV7w
 https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw

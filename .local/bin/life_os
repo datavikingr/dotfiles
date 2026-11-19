@@ -35,7 +35,7 @@ tmux send-keys -t "$SESSION:signal" "gurk" C-m
 
 # Window 7: Recreation / shell
 tmux new-window -t "$SESSION" -n "term"
-tmux send-keys -t "$SESSION:term" "hackerlogin.sh" C-m
+tmux send-keys -t "$SESSION:term" "clear && hackerlogin.sh" C-m
 
 # Return to the first window.
 tmux select-window -t "$SESSION:term"
