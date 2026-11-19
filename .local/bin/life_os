@@ -27,6 +27,7 @@ tmux send-keys -t "$SESSION:weather" "curl wttr.in" C-m
 
 # Window 5: Browser
 tmux new-window -t "$SESSION" -n "browser"
+<<<<<<< Updated upstream
 tmux send-keys -t "$SESSION:browser" "chawan https://duckduckgo.com" C-m
 
 # Window 6: Communications
@@ -42,4 +43,3 @@ tmux select-window -t "$SESSION:term"
 
 # Attach.
 exec tmux attach-session -t "$SESSION"
-

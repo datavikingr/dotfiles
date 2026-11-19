@@ -52,10 +52,14 @@ source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # aliases
 source "$HOME/.aliases"
-source "$HOME/.secrets"
+[[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 source "$HOME/.music"
+
+# rust
+source "$HOME/.cargo/env"
 
 # opencode
 export PATH=/home/datavikingr/.opencode/bin:$PATH
 
-. "$HOME/.cargo/env"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/datavikingr/.lmstudio/bin"
